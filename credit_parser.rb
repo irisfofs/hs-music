@@ -38,10 +38,14 @@ class CreditParser
       if elems[0].text =~ /#{PAGE}\s*-\s*#{TITLE}/
         rec.page = $LAST_MATCH_INFO[:page]
         rec.title = $LAST_MATCH_INFO[:title]
+
+        track_link = elems[0].css('a')[1]
+        rec.track_link = track_link.attr(:href) if track_link
       elsif elems[0].text =~ PAGE
         rec.page = $LAST_MATCH_INFO[:page]
         if elems[1].text =~ TITLE
           rec.title = $LAST_MATCH_INFO[:title]
+          rec.track_link = (info_of_a(elems[1]) || [nil, nil])[1]
         else
           puts "no match for element: #{elems.map(&:text)}"
         end
