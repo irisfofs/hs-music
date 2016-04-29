@@ -1,0 +1,983 @@
+---
+- !ruby/object:SongRecord
+  page: '1977'
+  title: Showtime (Piano Refrain)
+  page_link: http://www.mspaintadventures.com/?s=6&p=001977
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/showtime-piano-refrain-2
+- !ruby/object:SongRecord
+  page: '1982'
+  page_link: http://www.mspaintadventures.com/?s=6&p=001982
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '1988'
+  title: Harlequin
+  page_link: http://www.mspaintadventures.com/?s=6&p=001988
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/harlequin-2
+- !ruby/object:SongRecord
+  page: '1990'
+  title: Showtime (Original Mix)
+  page_link: http://www.mspaintadventures.com/?s=6&p=001990
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Malcolm Brown
+  artist_link: http://dragonxvi.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/showtime-original-mix-2
+- !ruby/object:SongRecord
+  page: '2037'
+  title: Sburban Jungle
+  page_link: http://www.mspaintadventures.com/?s=6&p=002037
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Michael Guy Bowman
+  artist_link: http://iambowman.com/
+  track_link: http://homestuck.bandcamp.com/track/sburban-jungle-2
+- !ruby/object:SongRecord
+  page: '2086'
+  title: Harlequin
+  page_link: http://www.mspaintadventures.com/?s=6&p=002086
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/harlequin-2
+- !ruby/object:SongRecord
+  page: '2122'
+  title: Aggrieve (Violin Refrain)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002122
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/aggrieve-violin-refrain-2
+- !ruby/object:SongRecord
+  page: '2146'
+  title: Sburban Countdown
+  page_link: http://www.mspaintadventures.com/?s=6&p=002146
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/sburban-countdown-2
+- !ruby/object:SongRecord
+  page: '2153'
+  title: Showtime (Piano Refrain)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002153
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/showtime-piano-refrain-2
+- !ruby/object:SongRecord
+  page: '2238'
+  page_link: http://www.mspaintadventures.com/?s=6&p=002238
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '2288'
+  title: Aggrieve
+  page_link: http://www.mspaintadventures.com/?s=6&p=002288
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/aggrieve-2
+- !ruby/object:SongRecord
+  page: '2293'
+  title: Showtime (Imp Strife Mix)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002293
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/showtime-imp-strife-mix-2
+- !ruby/object:SongRecord
+  page: '2300'
+  title: Showtime (Imp Strife Mix)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002300
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/showtime-imp-strife-mix-2
+- !ruby/object:SongRecord
+  page: '2318'
+  title: Nannaquin
+  page_link: http://www.mspaintadventures.com/?s=6&p=002318
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/nannaquin-2
+- !ruby/object:SongRecord
+  page: '2322'
+  title: Skies of Skaia
+  page_link: http://www.mspaintadventures.com/?s=6&p=002322
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/skies-of-skaia-2
+- !ruby/object:SongRecord
+  page: '2376'
+  title: Harlequin (Rock Version)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002376
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/harlequin-rock-version-2
+- !ruby/object:SongRecord
+  page: '2544'
+  title: John Sleeps
+  page_link: http://www.mspaintadventures.com/?s=6&p=002544
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/john-sleeps-skaian-magicant
+- !ruby/object:SongRecord
+  page: '2551'
+  title: Skaian Magicant
+  page_link: http://www.mspaintadventures.com/?s=6&p=002551
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/john-sleeps-skaian-magicant
+- !ruby/object:SongRecord
+  page: '2565'
+  title: Upward Movement (Dave Owns)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002565
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Robert Blaker
+  artist_link: http://upward-kali.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/upward-movement-dave-owns-2
+- !ruby/object:SongRecord
+  page: '2621'
+  title: Vagabounce
+  page_link: http://www.mspaintadventures.com/?s=6&p=002621
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: David Ko
+  artist_link: http://www.mspaforums.com/member.php?55789-MightyMoose
+  track_link: http://homestuck.bandcamp.com/track/vagabounce-2
+- !ruby/object:SongRecord
+  page: '2655'
+  title: Sburban Reversal
+  page_link: http://www.mspaintadventures.com/?s=6&p=002655
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+- !ruby/object:SongRecord
+  page: '2657'
+  title: Explore
+  page_link: http://www.mspaintadventures.com/?s=6&p=002657
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/explore-2
+- !ruby/object:SongRecord
+  page: '2669'
+  page_link: http://www.mspaintadventures.com/?s=6&p=002669
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '2722'
+  title: Gardener
+  page_link: http://www.mspaintadventures.com/?s=6&p=002722
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/gardener
+- !ruby/object:SongRecord
+  page: '2730'
+  title: Showtime Remix
+  page_link: http://www.mspaintadventures.com/?s=6&p=002730
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/showtime-remix-2
+- !ruby/object:SongRecord
+  page: '2733'
+  title: Dead Shuffle
+  page_link: http://www.mspaintadventures.com/?s=6&p=002733
+  album: 'Midnight Crew: Drawing Dead'
+  album_link: http://homestuck.bandcamp.com/album/midnight-crew-drawing-dead-2
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/dead-shuffle
+- !ruby/object:SongRecord
+  page: '2736'
+  title: Beatdown (Strider Style)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002736
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Curt Blakeslee
+  artist_link: http://www.mspaforums.com/member.php?57283-Norock
+  track_link: http://homestuck.bandcamp.com/track/beatdown-strider-style-2
+- !ruby/object:SongRecord
+  page: '2743'
+  title: Harleboss
+  page_link: http://www.mspaintadventures.com/?s=6&p=002743
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/harleboss-2
+- !ruby/object:SongRecord
+  page: '2771'
+  title: Beatdown Round 2
+  page_link: http://www.mspaintadventures.com/?s=6&p=002771
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Curt Blakeslee
+  artist_link: http://www.mspaforums.com/member.php?57283-Norock
+  track_link: http://homestuck.bandcamp.com/track/beatdown-round-2-2
+- !ruby/object:SongRecord
+  page: '2818'
+  title: Dissension (Original)
+  page_link: http://www.mspaintadventures.com/?s=6&p=002818
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: David Ko
+  artist_link: http://www.mspaforums.com/member.php?55789-MightyMoose
+  track_link: http://homestuck.bandcamp.com/track/dissension-original-2
+- !ruby/object:SongRecord
+  page: '2838'
+  title: Chorale for Jaspers
+  page_link: http://www.mspaintadventures.com/?s=6&p=002838
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Michael Guy Bowman
+  artist_link: http://iambowman.com/
+  track_link: http://homestuck.bandcamp.com/track/chorale-for-jaspers-2
+- !ruby/object:SongRecord
+  page_link: http://www.mspaintadventures.com/?s=6&p=pony
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Michael Guy Bowman
+  artist_link: http://iambowman.com/
+- !ruby/object:SongRecord
+  page: '2848'
+  title: Revelawesome
+  page_link: http://www.mspaintadventures.com/?s=6&p=002848
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Malcolm Brown
+  artist_link: http://dragonxvi.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/revelawesome-2
+- !ruby/object:SongRecord
+  page: '2879'
+  title: Hardlyquin
+  page_link: http://www.mspaintadventures.com/?s=6&p=002879
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/hardlyquin-2
+- !ruby/object:SongRecord
+  page: '2880'
+  title: An Unbreakable Union
+  page_link: http://www.mspaintadventures.com/?s=6&p=002880
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/an-unbreakable-union
+- !ruby/object:SongRecord
+  page: '2926'
+  title: The Beginning of Something Really Excellent
+  page_link: http://www.mspaintadventures.com/?s=6&p=002926
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Robert J! Lake
+  artist_link: http://spellmynamewithabang.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/the-beginning-of-something-really-excellent
+- !ruby/object:SongRecord
+  page: '2970'
+  title: Versus
+  page_link: http://www.mspaintadventures.com/?s=6&p=002970
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/versus
+- !ruby/object:SongRecord
+  page: '2973'
+  title: Ballad of Awakening
+  page_link: http://www.mspaintadventures.com/?s=6&p=002973
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Malcolm Brown
+  artist_link: http://dragonxvi.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/ballad-of-awakening-2
+- !ruby/object:SongRecord
+  page: '3049'
+  title: Sburban Jungle
+  page_link: http://www.mspaintadventures.com/?s=6&p=003049
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Michael Guy Bowman
+  artist_link: http://iambowman.com/
+  track_link: http://homestuck.bandcamp.com/track/sburban-jungle-2
+- !ruby/object:SongRecord
+  page: '3167'
+  title: Three in the Morning
+  page_link: http://www.mspaintadventures.com/?s=6&p=003167
+  album: 'Midnight Crew: Drawing Dead'
+  album_link: http://homestuck.bandcamp.com/album/midnight-crew-drawing-dead-2
+  artist: Clark Powell
+  artist_link: http://plazmataz.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/three-in-the-morning
+- !ruby/object:SongRecord
+  page: '3258'
+  title: Doctor
+  page_link: http://www.mspaintadventures.com/?s=6&p=003258
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/doctor-2
+- !ruby/object:SongRecord
+  page: '3307'
+  title: Endless Climb
+  page_link: http://www.mspaintadventures.com/?s=6&p=003307
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: George Buzinkai
+  artist_link: http://buzinkai.net/
+  track_link: http://homestuck.bandcamp.com/track/endless-climb-2
+- !ruby/object:SongRecord
+  page: '3541'
+  title: Atomyk Ebonpyre
+  page_link: http://www.mspaintadventures.com/?s=6&p=003541
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/atomyk-ebonpyre-2
+- !ruby/object:SongRecord
+  page: '3556'
+  title: Bed of Rose's
+  page_link: http://www.mspaintadventures.com/?s=6&p=003556
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Mark Hadley
+  artist_link: http://www.mspaforums.com/member.php?55018-AgentParsec
+  track_link: http://homestuck.bandcamp.com/track/bed-of-roses-dreams-of-derse
+- !ruby/object:SongRecord
+  page: '3568'
+  title: Black
+  page_link: http://www.mspaintadventures.com/?s=6&p=003568
+  album: Homestuck Vol. 1-4
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-1-4
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/black-2
+- !ruby/object:SongRecord
+  page: '3620'
+  title: Unsheath'd
+  page_link: http://www.mspaintadventures.com/?s=6&p=003620
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Alexander Rosetti
+  artist_link: http://captainpunish.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/unsheathd
+- !ruby/object:SongRecord
+  page: '3701'
+  title: Skaian Skirmish
+  page_link: http://www.mspaintadventures.com/?s=6&p=003701
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/skaian-skirmish
+- !ruby/object:SongRecord
+  page: '3831'
+  title: How Do I Live (Bunny Back in the Box Version)
+  page_link: http://www.mspaintadventures.com/?s=6&p=003831
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/how-do-i-live-bunny-back-in-the-box-version
+- !ruby/object:SongRecord
+  page: '3840'
+  title: Descend
+  page_link: http://www.mspaintadventures.com/?s=6&p=003840
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/descend
+- !ruby/object:SongRecord
+  page: '4478'
+  title: Crystamanthequins
+  page_link: http://www.mspaintadventures.com/?s=6&p=004478
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/crystamanthequins
+- !ruby/object:SongRecord
+  page: '4526'
+  title: Homestuck
+  page_link: http://www.mspaintadventures.com/?s=6&p=004526
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/homestuck
+- !ruby/object:SongRecord
+  page: '4692'
+  title: Karkat's Theme
+  page_link: http://www.mspaintadventures.com/?s=6&p=004692
+  album: AlterniaBound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/karkats-theme
+- !ruby/object:SongRecord
+  page: '4748'
+  title: Let the Squiddles Sleep (End Theme)
+  page_link: http://www.mspaintadventures.com/?s=6&p=004748
+  album: Squiddles!
+  album_link: http://homestuck.bandcamp.com/album/squiddles
+  artist: Robert J! Lake
+  artist_link: http://spellmynamewithabang.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/let-the-squiddles-sleep-end-theme
+- !ruby/object:SongRecord
+  page: '4827'
+  title: Umbral Ultimatum
+  page_link: http://www.mspaintadventures.com/?s=6&p=004827
+  album: 'Homestuck Vol. 6: Heir Transparent'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/umbral-ultimatum
+- !ruby/object:SongRecord
+  page: '4888'
+  title: Frost
+  page_link: http://www.mspaintadventures.com/?s=6&p=004888
+  album: 'Homestuck Vol. 6: Heir Transparent'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent
+  artist: 'Jeremy "Solatrus" Iamurri '
+  artist_link: http://www.solatrus.com/
+  track_link: http://homestuck.bandcamp.com/track/frost
+- !ruby/object:SongRecord
+  page: '4901'
+  title: Sunslammer
+  page_link: http://www.mspaintadventures.com/?s=6&p=004901
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/sunslammer
+- !ruby/object:SongRecord
+  page: '4979'
+  title: Planet Healer
+  page_link: http://www.mspaintadventures.com/?s=6&p=004979
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/planet-healer
+- !ruby/object:SongRecord
+  page: '4987'
+  title: Savior of the Waking World
+  page_link: http://www.mspaintadventures.com/?s=6&p=004987
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/savior-of-the-waking-world
+- !ruby/object:SongRecord
+  page: '5197'
+  title: MeGaLoVania
+  page_link: http://www.mspaintadventures.com/?s=6&p=005197
+  album: 'Homestuck Vol. 6: Heir Transparent'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/megalovania
+- !ruby/object:SongRecord
+  page: '5221'
+  title: Darling Kanaya
+  page_link: http://www.mspaintadventures.com/?s=6&p=005221
+  album: AlterniaBound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/darling-kanaya
+- !ruby/object:SongRecord
+  page: '5338'
+  title: Horschestra STRONG Version
+  page_link: http://www.mspaintadventures.com/?s=6&p=005338
+  album: Alterniabound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: Alexander Rosetti
+  artist_link: http://captainpunish.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/horschestra-strong-version
+- !ruby/object:SongRecord
+  page: '5420'
+  title: Trollian Standoff
+  page_link: http://www.mspaintadventures.com/?s=6&p=005420
+  album: Alterniabound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: 'Joren "Tensei" de Bruin '
+  artist_link: http://www.mspaforums.com/member.php?1002797-Tensei
+  track_link: http://homestuck.bandcamp.com/track/trollian-standoff
+- !ruby/object:SongRecord
+  page: '5579'
+  title: Warhammer of Zillyhoo
+  page_link: http://www.mspaintadventures.com/?s=6&p=005579
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: Michael Guy Bowman
+  artist_link: http://iambowman.com/
+  track_link: http://homestuck.bandcamp.com/track/warhammer-of-zillyhoo
+- !ruby/object:SongRecord
+  page: '5595'
+  title: Black Rose / Green Sun
+  page_link: http://www.mspaintadventures.com/?s=6&p=005595
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: Malcolm Brown
+  artist_link: http://dragonxvi.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/black-rose-green-sun
+- !ruby/object:SongRecord
+  page: '5596'
+  title: At the Price of Oblivion
+  page_link: http://www.mspaintadventures.com/?s=6&p=005596
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: Malcolm Brown
+  artist_link: http://dragonxvi.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/at-the-price-of-oblivion
+- !ruby/object:SongRecord
+  page: '5618'
+  title: Secret ROM
+  page_link: http://www.mspaintadventures.com/?s=6&p=005618
+  album: 
+  album_link: 
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+- !ruby/object:SongRecord
+  page: '5625'
+  title: Trollcops
+  page_link: 
+  album: Alterniabound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: Erik "Jit" Scheele
+  artist_link: http://jitmakesstuff.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/trollcops
+- !ruby/object:SongRecord
+  page: '5644'
+  title: Terezi Owns
+  page_link: http://www.mspaintadventures.com/?s=6&p=005644
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/terezi-owns
+- !ruby/object:SongRecord
+  page: '5660'
+  title: 'BL1ND JUST1C3 : 1NV3ST1G4T1ON !!'
+  page_link: http://www.mspaintadventures.com/?s=6&p=005660
+  album: AlterniaBound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/bl1nd-just1c3-1nv3st1g4t1on
+- !ruby/object:SongRecord
+  page: '5985'
+  title: The Carnival
+  page_link: http://www.mspaintadventures.com/?s=6&p=005985
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: Erik "Jit" Scheele
+  artist_link: http://jitmakesstuff.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/the-carnival
+- !ruby/object:SongRecord
+  page: '6009'
+  title: Cascade
+  page_link: http://www.mspaintadventures.com/cascade.php?s=6&p=6009
+  album: Homestuck Vol. 8
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-8
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/cascade
+- !ruby/object:SongRecord
+  page: '6011'
+  title: English
+  page_link: http://www.mspaintadventures.com/?s=6&p=006011
+  album: The Felt
+  album_link: http://homestuck.bandcamp.com/album/the-felt
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/english
+- !ruby/object:SongRecord
+  page: '6013'
+  title: Homestuck Anthem
+  page_link: http://www.mspaintadventures.com/?s=6&p=006013
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Clark Powell
+  artist_link: http://plazmataz.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/homestuck-anthem
+- !ruby/object:SongRecord
+  page: '6175'
+  page_link: http://www.mspaintadventures.com/?s=6&p=006175
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '6273'
+  title: Frustracean
+  page_link: http://www.mspaintadventures.com/?s=6&p=006273
+  album: Homestuck Vol. 9
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+- !ruby/object:SongRecord
+  page: '6290'
+  title: Infinity Mechanism
+  page_link: http://www.mspaintadventures.com/?s=6&p=006290
+  album: Homestuck Vol. 8
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-8
+  artist: Thomas "EidolonOrpheus" Ferkol
+  artist_link: http://eidolonorpheus.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/infinity-mechanism
+- !ruby/object:SongRecord
+  page: '6386'
+  title: Even in Death
+  page_link: http://www.mspaintadventures.com/?s=6&p=006386
+  album: 'Homestuck Vol. 7: At the Price of Oblivion'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion
+  artist: Clark Powell
+  artist_link: http://plazmataz.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/even-in-death
+- !ruby/object:SongRecord
+  page: '6441'
+  title: Anbroids
+  page_link: http://www.mspaintadventures.com/?s=6&p=006441
+  album: Homestuck Vol. 9
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: Malcolm Brown
+  artist_link: http://dragonxvi.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/anbroids-v20
+- !ruby/object:SongRecord
+  page: '6472'
+  title: Time on My Side
+  page_link: http://www.mspaintadventures.com/?s=6&p=006472
+  album: Strife!
+  album_link: http://homestuck.bandcamp.com/album/strife
+  artist: 'Joren "Tensei" de Bruin '
+  artist_link: http://www.mspaforums.com/member.php?1002797-Tensei
+  track_link: http://homestuck.bandcamp.com/track/time-on-my-side
+- !ruby/object:SongRecord
+  page: '6565'
+  title: Another Jungle
+  page_link: http://www.mspaintadventures.com/?s=6&p=006565
+  album: Homestuck Vol. 9
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: Michael Guy Bowman
+  artist_link: http://iambowman.com/
+  track_link: http://homestuck.bandcamp.com/track/another-jungle
+- !ruby/object:SongRecord
+  page: '6715'
+  page_link: http://www.mspaintadventures.com/?s=6&p=006715
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '6720'
+  title: Rain
+  page_link: http://www.mspaintadventures.com/?s=6&p=006720
+  album: Medium
+  album_link: http://homestuck.bandcamp.com/album/medium
+  artist: Clark Powell
+  artist_link: http://plazmataz.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/rain
+- !ruby/object:SongRecord
+  page: '6725'
+  title: Ruins (With Strings)
+  page_link: http://www.mspaintadventures.com/?s=6&p=006725
+  album: Homestuck Vol. 5
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-5
+  artist: Erik "Jit" Scheele
+  artist_link: http://jitmakesstuff.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/ruins-with-strings
+- !ruby/object:SongRecord
+  page: '6727'
+  title: Elevatorstuck
+  page_link: http://www.mspaintadventures.com/?s=6&p=006727
+  album: 'Homestuck Vol. 6: Heir Transparent'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/elevatorstuck
+- !ruby/object:SongRecord
+  page: '6844'
+  title: I'm a Member of the Midnight Crew (Acapella)
+  page_link: http://www.mspaintadventures.com/?s=6&p=006844
+  album: Homestuck Vol. 8
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-8
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/im-a-member-of-the-midnight-crew-acapella
+- !ruby/object:SongRecord
+  page: '6927'
+  title: I Don't Want to Miss a Thing
+  page_link: http://www.mspaintadventures.com/?s=6&p=006927
+  album: 'Homestuck Vol. 6: Heir Transparent'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/i-dont-want-to-miss-a-thing
+- !ruby/object:SongRecord
+  page: '7138'
+  page_link: http://www.mspaintadventures.com/?s=6&p=007138
+  album: Homestuck Vol. 8
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-8
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '7161'
+  title: Eternity Served Cold
+  page_link: http://www.mspaintadventures.com/?s=6&p=007161
+  album: Cherubim
+  album_link: http://homestuck.bandcamp.com/album/cherubim
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '7163'
+  title: Fuchsia Ruler
+  page_link: 
+  album: 'coloUrs and mayhem: Universe A'
+  album_link: http://homestuck.bandcamp.com/album/colours-and-mayhem-universe-a
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/fuchsia-ruler
+- !ruby/object:SongRecord
+  page: '7208'
+  title: Hate You
+  page_link: 
+  album: Homestuck Volume 9
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: Toby "Radiation" Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/hate-you
+- !ruby/object:SongRecord
+  page: '7298'
+  title: 108 Stars of Density
+  page_link: 
+  album: 
+  album_link: 
+  artist: Toby "Radiation" Fox
+  artist_link: http://tobyfox.net/
+  track_link: 
+- !ruby/object:SongRecord
+  page: '7327'
+  title: 'Killed by BR8K Spider​!​!​!​!​!​!​!​! '
+  page_link: http://www.mspaintadventures.com/?s=6&p=007327
+  album: AlterniaBound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: http://homestuck.bandcamp.com/track/killed-by-br8k-spider
+- !ruby/object:SongRecord
+  page: '7338'
+  title: Even in Death (T'Morra's Belly Mix)
+  page_link: http://www.mspaintadventures.com/?s=6&p=007338
+  album: Homestuck Volume 8
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-8
+  artist: Clark Powell
+  artist_link: http://plazmataz.tumblr.com/
+  track_link: http://homestuck.bandcamp.com/track/even-in-death-tmorras-belly-mix
+- !ruby/object:SongRecord
+  page: '7371'
+  page_link: http://www.mspaintadventures.com/?s=6&p=007371
+  album: 'Homestuck Vol. 6: Heir Transparent'
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '7412'
+  title: A Taste for Adventure
+  page_link: http://www.mspaintadventures.com/?s=6&p=007412
+  album: Homestuck Vol. 9
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: 'Seth "Beatfox" Peelle '
+  artist_link: http://www.mspaforums.com/member.php?56012-Beatfox
+  track_link: http://homestuck.bandcamp.com/track/a-taste-for-adventure
+- !ruby/object:SongRecord
+  page: '7555'
+  title: Horschestra STRONG Version
+  page_link: http://www.mspaintadventures.com/?s=6&p=007555
+  album: Alterniabound
+  album_link: http://homestuck.bandcamp.com/album/alterniabound
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/horschestra-strong-version
+- !ruby/object:SongRecord
+  page: '7611'
+  title: Trickster Mode
+  page_link: http://www.mspaintadventures.com/?s=6&p=007611
+  album: 
+  album_link: 
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+- !ruby/object:SongRecord
+  page: '7614'
+  title: Kazoostuck
+  page_link: http://www.mspaintadventures.com/trickster.php?s=6&p=007614
+  album: 
+  album_link: 
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+- !ruby/object:SongRecord
+  page: '8131'
+  title: A Taste for Adventure
+  page_link: http://www.mspaintadventures.com/?s=6&p=008131
+  album: Homestuck Vol. 9
+  album_link: http://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: 'Seth "Beatfox" Peelle '
+  artist_link: http://www.mspaforums.com/member.php?56012-Beatfox
+  track_link: http://homestuck.bandcamp.com/track/a-taste-for-adventure
+- !ruby/object:SongRecord
+  page: '8143'
+  title: Homosuck Anthem
+  page_link: http://www.mspaintadventures.com/?s=6&p=008143
+  album: 
+  album_link: 
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+- !ruby/object:SongRecord
+  page: '8178'
+  title: Gold Pilot
+  page_link: http://www.mspaintadventures.com/?s=6&p=008178
+  album: 'coloUrs and mayhem: Universe A'
+  album_link: http://homestuck.bandcamp.com/album/colours-and-mayhem-universe-a
+  artist: 
+  artist_link: 
+  track_link: http://homestuck.bandcamp.com/track/gold-pilot
+- !ruby/object:SongRecord
+  page: '8801'
+  title: Carne Vale
+  page_link: http://www.mspaintadventures.com/ACT6ACT6.php?s=6&p=008801
+  album: Cherubim
+  album_link: https://homestuck.bandcamp.com/album/cherubim
+  artist: 
+  artist_link: 
+  track_link: https://homestuck.bandcamp.com/track/carne-vale
+- !ruby/object:SongRecord
+  page: '8998'
+  title: Pipeorgankind
+  page_link: http://www.mspaintadventures.com/?s=6&p=008998
+  album: 'coloUrs and mayhem: Universe B'
+  album_link: https://homestuck.bandcamp.com/album/colours-and-mayhem-universe-b
+  artist: James Roach
+  artist_link: http://soselfimportant.tumblr.com/
+  track_link: https://homestuck.bandcamp.com/track/pipeorgankind
+- !ruby/object:SongRecord
+  page: '9001'
+  title: Elevatorstuck, with Meows
+  page_link: http://www.mspaintadventures.com/?s=6&p=009001
+  album: 
+  album_link: 
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: 
+- !ruby/object:SongRecord
+  page: '9305'
+  page_link: http://www.mspaintadventures.com/?s=6&p=009305
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+- !ruby/object:SongRecord
+  page: '9309'
+  title: Homosuck Swan Song
+  page_link: http://www.mspaintadventures.com/?s=6&p=009309
+  album: 
+  album_link: 
+  artist: Toby Radiation Fox
+  artist_link: http://tobyfox.net/
+  track_link: 
+- !ruby/object:SongRecord
+  page: '9348'
+  title: Hello Zepp
+  page_link: http://www.mspaintadventures.com/?s=6&p=009348
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+  track_link: 
+- !ruby/object:SongRecord
+  page: '9349'
+  title: 'Moonsetter '
+  page_link: http://www.mspaintadventures.com/?s=6&p=009349
+  album: Homestuck Volume 9
+  album_link: https://homestuck.bandcamp.com/album/homestuck-vol-9
+  artist: 
+  artist_link: 
+  track_link: https://homestuck.bandcamp.com/track/moonsetter
+- !ruby/object:SongRecord
+  page: '9828'
+  title: Horsecatska
+  page_link: http://www.mspaintadventures.com/?s=6&p=009828
+  album: 
+  album_link: 
+  artist: James Roach
+  artist_link: http://soselfimportant.tumblr.com/
+  track_link: 
+- !ruby/object:SongRecord
+  page: '9859'
+  title: Do You Remem8er Me
+  page_link: http://www.mspaintadventures.com/?s=6&p=009859
+  album: Homestuck Volume 8
+  album_link: https://homestuck.bandcamp.com/album/homestuck-vol-8
+  artist: 
+  artist_link: 
+  track_link: https://homestuck.bandcamp.com/track/do-you-remem8er-me
+- !ruby/object:SongRecord
+  page: '9987'
+  title: Collide
+  page_link: http://www.mspaintadventures.com/?s=6&p=009987
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+  track_link: https://homestuck.bandcamp.com/album/s-collide
+- !ruby/object:SongRecord
+  page: '10027'
+  title: Overture
+  page_link: http://www.mspaintadventures.com/?s=6&p=010027
+  album: 
+  album_link: 
+  artist: 
+  artist_link: 
+  track_link: https://homestuck.bandcamp.com/album/act-7
