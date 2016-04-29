@@ -21,6 +21,92 @@ getJSON('/data.json').then(function(data) {
   d3stuff(data);
 });
 
+// these should go somewhere better than just... sitting here ugh
+var width = 1920;
+var height = 1000;
+var cover_size = 60;
+var border_size = 1;
+var spacing = 5;
+
+function drawActs(chart) {
+  /* Act information */
+  var everything = {
+    part1: [
+      { title: 'Act 1', page: 1901, subtitle: 'The Note Desolation Plays', color: 'red' },
+      { title: 'Act 2', page: 2148, subtitle: 'Raise of the Conductor\'s Baton', color: 'red' },
+      { title: 'Act 3', page: 2659, subtitle: 'Insane Corkscrew Haymakers', color: 'red' },
+      { title: 'Act 4', page: 3258, subtitle: 'Flight of the Paradox Clones', color: 'red' }
+    ],
+    part2: [
+      { title: 'Act 5 Act 1', page: 3889, subtitle: 'MOB1US DOUBL3 R34CH4ROUND', color: 'blue' },
+      { title: 'Act 5 Act 2', page: 4526, subtitle: 'He is already here.', color: 'red' },
+      { title: 'EOA5', page: 6009, subtitle: 'Cascade.', color: 'black' },
+      { title: 'Act 6 Act 1', page: 6013, subtitle: 'Through Broken Glass', color: 'green' },
+      { title: 'Act 6 Intermission 1', page: 6195, subtitle: 'corpse party', color: 'gray' },
+      { title: 'Act 6 Act 2', page: 6319, subtitle: 'Your shit is wrecked.', color: 'green' },
+      { title: 'Act 6 Intermission 2', page: 6567, subtitle: 'penis ouija', color: 'gray' },
+      { title: 'Act 6 Act 3', page: 6720, subtitle: 'Nobles', color: 'green' },
+      { title: 'Act 6 Intermission 3', page: 7163, subtitle: 'Ballet of the Dancestors', color: 'gray' },
+      { title: 'Act 6 Act 4', page: 7338, subtitle: 'Void', color: 'green' },
+      { title: 'Act 6 Intermission 4', page: 7341, subtitle: 'Dead', color: 'gray' },
+      { title: 'Act 6 Act 5', page: 7471, subtitle: 'Of Gods and Tricksters', color: 'green' },
+      { title: 'Act 6 Intermission 5', page: 7827, subtitle: 'I\'M PUTTING YOU ON SPEAKER CRAB.', color: 'gray' },
+      { title: 'Act 6 Act 6', page: 8143, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Intermission 1', page: 8178, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Act 2', page: 8375, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Intermission 2', page: 8431, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Act 3', page: 8753, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Intermission 3', page: 8801, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Act 4', page: 8821, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Intermission 4', page: 8844, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Act 5', page: 9309, subtitle: '', color: 'green' },
+      { title: 'Act 6 Act 6 Intermission 5', page: 9349, subtitle: '', color: 'green' },
+      { title: 'EOA6', page: 9987, subtitle: 'Collide.', color: 'green' },
+      { title: 'Act 7', page: 10027, subtitle: '', color: 'white' },
+    ]
+  };
+
+  var height = chart.attr("height");
+  var height_midpoint = height / 2;
+
+  // why am I not just using this to begin with...?
+  var combined_data = everything.part1.concat(everything.part2);
+
+  chart.selectAll('line')
+      .data(combined_data)
+    .enter().append('line')
+      .attr('y1', height_midpoint)
+      .attr('y2', height_midpoint)
+      .attr('x1', (d) => { return page_num_to_x(d.page); })
+      .attr('x2', (d, i) => {
+        var next_i = Math.min(i + 1, combined_data.length - 1);
+        return page_num_to_x(combined_data[next_i].page);
+      })
+      .attr('stroke', (d) => { return d.color; })
+      .attr('stroke-width', 3);
+
+  chart.selectAll('circle')
+      .data(combined_data)
+    .enter().append('circle')
+      .attr("cx", (d) => { return page_num_to_x(d.page); })
+      .attr("cy", height_midpoint)
+      .attr('r', 8)
+      .attr('stroke', (d) => { return d.color; })
+      .attr('stroke-width', 3)
+      .attr('fill', 'white');
+}
+
+function page_num_to_x(page) {
+  var first_page = 1901;
+  var last_page = 10028;
+  var page_span = last_page - first_page;
+  var width_padding = 200;
+
+  var usable_width = width - width_padding;
+  var homestuck_page_count = (page || 0) - first_page;
+  return homestuck_page_count / page_span * usable_width + width_padding / 2;
+}
+
 function cover_filename(track) {
   if (track.title) {
     var fn = track.title.toLowerCase().replace(/ /g, '_').replace(/[^\w-]/g, '');
@@ -34,20 +120,12 @@ function cover_filename(track) {
 }
 
 function d3stuff(data) {
-  var width = 1920;
-  var width_padding = 200;
-  var height = 1000;
-  var cover_size = 60;
-  var border_size = 1;
-  var spacing = 5;
-
-  var first_page = 1901;
-  var last_page = 10028;
-  var page_span = last_page - first_page;
-
   var chart = d3.select("#chart")
     .attr("width", width)
     .attr("height", height);
+
+  // ooo you should have a slick AF animation of it drawing the act line
+  drawActs(chart);
 
   var tracker = new HeightTracker(cover_size + spacing);
 
@@ -55,7 +133,7 @@ function d3stuff(data) {
       .data(data)
     .enter().append("g")
       .attr("transform", (d) => {
-        d.x = ((d.page || 100) - first_page) / page_span * (width - width_padding) + width_padding / 2;
+        d.x = page_num_to_x(d.page);
         var y = (height/2) + (cover_size + spacing) * tracker.getHeight(d);
 
         return `translate(${d.x - cover_size / 2}, ${y - cover_size / 2})`;
@@ -146,8 +224,4 @@ function HeightTracker(width) {
       return binarySearch(track, midpoint + 1, end);
     }
   }
-
-
 }
-
-
