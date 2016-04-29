@@ -186,10 +186,9 @@ function d3stuff() {
   const tip = d3.tip()
     .attr('class', 'd3-tip cover-tooltip')
     .html((d) => (`<p>${d.title} - ${d.artist}</p>
-<p>Page ${d.page}</p>`));
+<p>${d.page_title}</p>`));
 
   cover_group.call(tip);
-
 
   const covers = cover_group.selectAll('.cover')
       .data(data)
@@ -206,18 +205,18 @@ function d3stuff() {
       .delay((d) => 500 + total_rollout / 2 + fraction_of_comic(d.page - first_page) * total_rollout)
       .style('opacity', 1);
 
-  covers.append('image')
-    .attr('xlink:href', (d) => `/covers/${cover_filename(d)}`)
-    .attr('width', cover_size)
-    .attr('height', cover_size);
-
-  // yes, this will cover up border_size/2 pixels of the cover. OH WELL
+  // put it behind the image so the border peeks out from behind
   covers.append('rect')
     .attr('width', cover_size)
     .attr('height', cover_size)
     .attr('stroke', 'black')
     .attr('stroke-width', border_size)
-    .attr('fill', 'none');
+    .attr('fill', 'black');
+
+  covers.append('image')
+    .attr('xlink:href', (d) => `/covers/${cover_filename(d)}`)
+    .attr('width', cover_size)
+    .attr('height', cover_size);
 }
 
 function HeightTracker(item_width) {

@@ -3,7 +3,7 @@ require 'English'
 require 'yaml'
 
 class SongRecord
-  attr_accessor :page, :page_link
+  attr_accessor :page, :page_link, :page_title
   attr_accessor :title, :track_link
   attr_accessor :album_link, :album
   attr_accessor :artist, :artist_link
