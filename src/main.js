@@ -11,6 +11,10 @@ const cover_size = 60;
 const border_size = 1;
 const spacing = 5;
 
+const first_page = 1901;
+const last_page = 10028;
+const page_span = last_page - first_page;
+
 console.log(data);
 d3stuff(data);
 
@@ -58,40 +62,73 @@ function drawActs(chart) {
 
   // why am I not just using this to begin with...?
   const combined_data = everything.part1.concat(everything.part2);
+  for (let i = combined_data.length - 1; i >= 0; i--) {
+    const next_i = Math.min(i + 1, combined_data.length - 1);
+    combined_data[i].length = combined_data[next_i].page - combined_data[i].page;
+  }
 
-  chart.selectAll('line')
+  const total_rollout = 4000;
+  const circle_duration = 300;
+
+  const act_lines = chart.selectAll('line')
       .data(combined_data)
     .enter().append('line')
       .attr('y1', height_midpoint)
       .attr('y2', height_midpoint)
       .attr('x1', (d) => page_num_to_x(d.page))
-      .attr('x2', (d, i) => {
-        const next_i = Math.min(i + 1, combined_data.length - 1);
-        return page_num_to_x(combined_data[next_i].page);
-      })
+      .attr('x2', (d) => page_num_to_x(d.page))
       .attr('stroke', (d) => d.color)
-      .attr('stroke-width', 3);
+      .attr('stroke-width', 3)
+    .transition()
+      .ease('sine-out')
+      // TODO: write functions to clear up these computations
+      // like until_act_line_passed or something...
+      .duration((d) => fraction_of_comic(d.length) * total_rollout)
+      .delay((d) => fraction_of_comic(d.page - first_page) * total_rollout)
+      .attr('x2', (d) => page_num_to_x(d.page + d.length));
 
-  chart.selectAll('circle')
+  const act_circles = chart.selectAll('circle')
       .data(combined_data)
     .enter().append('circle')
       .attr('cx', (d) => page_num_to_x(d.page))
       .attr('cy', height_midpoint)
-      .attr('r', 8)
       .attr('stroke', (d) => d.color)
       .attr('stroke-width', 3)
-      .attr('fill', 'white');
+      .attr('fill', d => d.color)
+      .attr('r', 0)
+    .transition()
+      .ease('sine-out')
+      .duration(circle_duration)
+      .delay((d, i) => total_rollout / 3 + (i / combined_data.length) * total_rollout)
+      .attr('r', 8);
+
+  // d3.transition()
+  //   .each(function () {
+  //     act_lines.transition()
+  //       .duration((d) => d.length * 10)
+  //       .delay((d) => (page_num_to_x(d.page) - page_num_to_x(1901)) * 10) // adds extra starting delay
+  //       .attr('x2', (d) => page_num_to_x(d.page) + d.length);
+  //   })
+  //   .transition()
+  //   .each('start', () => {
+  //     d3.selectAll('circle')
+  //       .transition()
+  //       .delay((d) => (page_num_to_x(d.page) - page_num_to_x(1901)) * 10) // adds extra starting delay
+  //       .duration(500)
+  //       .attr('r', 8);
+  //   });
 }
 
 function page_num_to_x(page) {
-  const first_page = 1901;
-  const last_page = 10028;
-  const page_span = last_page - first_page;
   const width_padding = 200;
 
   const usable_width = width - width_padding;
   const homestuck_page_count = (page || 0) - first_page;
   return homestuck_page_count / page_span * usable_width + width_padding / 2;
+}
+
+function fraction_of_comic(page_count) {
+  return page_count / page_span;
 }
 
 function cover_filename(track) {
@@ -112,7 +149,11 @@ function d3stuff() {
     .attr('height', height);
 
   // ooo you should have a slick AF animation of it drawing the act line
-  drawActs(chart);
+
+  const cover_group = chart.append('g');
+  const act_line = chart.append('g');
+
+  drawActs(act_line);
 
   const tracker = new HeightTracker(cover_size + spacing);
 
@@ -124,20 +165,33 @@ function d3stuff() {
     d.y = (height / 2) + (cover_size + spacing) * tracker.getHeight(d);
   });
 
-  chart.selectAll('whatever')
+  const total_rollout = 4000;
+  cover_group.selectAll('.drop-line')
       .data(data)
     .enter().append('line')
       .attr('x1', (d) => d.x)
       .attr('x2', (d) => d.x)
-      .attr('y1', (d) => d.y)
+      .attr('y1', () => height / 2)
       .attr('y2', () => height / 2)
       .attr('stroke', 'white')
-      .attr('stroke-width', 1);
+      .attr('stroke-width', 1)
+    .transition()
+      .duration(500)
+      .ease('cubic-in')
+      .delay((d) => total_rollout / 2 + fraction_of_comic(d.page - first_page) * total_rollout)
+      .attr('y1', (d) => d.y);
 
-  const covers = chart.selectAll('g')
+  const covers = chart.selectAll('.cover')
       .data(data)
     .enter().append('g')
-      .attr('transform', (d) => `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`);
+      .attr('transform', (d) => `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`)
+      .style('opacity', 0);
+
+  covers.transition()
+      .duration(250)
+      .ease('cubic-out')
+      .delay((d) => 500 + total_rollout / 2 + fraction_of_comic(d.page - first_page) * total_rollout)
+      .style('opacity', 1);
 
   covers.append('image')
     .attr('xlink:href', (d) => `/covers/${cover_filename(d)}`)
