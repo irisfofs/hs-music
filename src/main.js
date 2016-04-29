@@ -1,8 +1,10 @@
 const d3 = require('d3');
+d3.tip = require('d3-tip');
 const data = require('./data.json');
 
 // require styles
 require('./main.css');
+require('d3-tip/examples/example-styles.css');
 
 // these should go somewhere better than just... sitting here ugh
 const width = 1920;
@@ -181,11 +183,22 @@ function d3stuff() {
       .delay((d) => total_rollout / 2 + fraction_of_comic(d.page - first_page) * total_rollout)
       .attr('y1', (d) => d.y);
 
-  const covers = chart.selectAll('.cover')
+  const tip = d3.tip()
+    .attr('class', 'd3-tip cover-tooltip')
+    .html((d) => (`<p>${d.title} - ${d.artist}</p>
+<p>Page ${d.page}</p>`));
+
+  cover_group.call(tip);
+
+
+  const covers = cover_group.selectAll('.cover')
       .data(data)
     .enter().append('g')
       .attr('transform', (d) => `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`)
       .style('opacity', 0);
+
+  covers.on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
 
   covers.transition()
       .duration(250)

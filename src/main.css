@@ -3,3 +3,18 @@ body {
   padding: 0;
   background: #333;
 }
+
+.cover-tooltip {
+  /*transition: 0s 500s opacity;*/
+  font-family: OpenSans, sans-serif;
+  font-size: 12px;
+}
+
+.cover-tooltip p {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.cover-tooltip.cover-tooltip-shown {
+  /*opacity: 1;*/
+}
