@@ -66,7 +66,7 @@ function drawActs(chart) {
     ]
   };
 
-  var height = chart.attr("height");
+  var height = chart.attr('height');
   var height_midpoint = height / 2;
 
   // why am I not just using this to begin with...?
@@ -88,8 +88,8 @@ function drawActs(chart) {
   chart.selectAll('circle')
       .data(combined_data)
     .enter().append('circle')
-      .attr("cx", (d) => { return page_num_to_x(d.page); })
-      .attr("cy", height_midpoint)
+      .attr('cx', (d) => { return page_num_to_x(d.page); })
+      .attr('cy', height_midpoint)
       .attr('r', 8)
       .attr('stroke', (d) => { return d.color; })
       .attr('stroke-width', 3)
@@ -121,9 +121,9 @@ function cover_filename(track) {
 }
 
 function d3stuff(data) {
-  var chart = d3.select("#chart")
-    .attr("width", width)
-    .attr("height", height);
+  var chart = d3.select('#chart')
+    .attr('width', width)
+    .attr('height', height);
 
   // ooo you should have a slick AF animation of it drawing the act line
   drawActs(chart);
@@ -138,35 +138,35 @@ function d3stuff(data) {
     d.y = (height/2) + (cover_size + spacing) * tracker.getHeight(d);
   })
 
-  var connecting_lines = chart.selectAll("whatever")
+  var connecting_lines = chart.selectAll('whatever')
       .data(data)
-    .enter().append("line")
-      .attr("x1", (d) => d.x)
-      .attr("x2", (d) => d.x)
-      .attr("y1", (d) => d.y)
-      .attr("y2", (d) => height / 2)
-      .attr("stroke", "white")
-      .attr("stroke-width", 1);
+    .enter().append('line')
+      .attr('x1', (d) => d.x)
+      .attr('x2', (d) => d.x)
+      .attr('y1', (d) => d.y)
+      .attr('y2', (d) => height / 2)
+      .attr('stroke', 'white')
+      .attr('stroke-width', 1);
 
-  var covers = chart.selectAll("g")
+  var covers = chart.selectAll('g')
       .data(data)
-    .enter().append("g")
-      .attr("transform", (d) => {
+    .enter().append('g')
+      .attr('transform', (d) => {
         return `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`;
       });
 
-  covers.append("image")
-    .attr("xlink:href", (d) => `/covers/${cover_filename(d)}`)
-    .attr("width", cover_size)
-    .attr("height", cover_size);
+  covers.append('image')
+    .attr('xlink:href', (d) => `/covers/${cover_filename(d)}`)
+    .attr('width', cover_size)
+    .attr('height', cover_size);
 
   // yes, this will cover up border_size/2 pixels of the cover. OH WELL
-  covers.append("rect")
-    .attr("width", cover_size)
-    .attr("height", cover_size)
-    .attr("stroke", "black")
-    .attr("stroke-width", border_size)
-    .attr("fill", "none");
+  covers.append('rect')
+    .attr('width', cover_size)
+    .attr('height', cover_size)
+    .attr('stroke', 'black')
+    .attr('stroke-width', border_size)
+    .attr('fill', 'none');
 
 
 }
