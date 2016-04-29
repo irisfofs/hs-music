@@ -7,6 +7,16 @@ class SongRecord
   attr_accessor :title, :track_link
   attr_accessor :album_link, :album
   attr_accessor :artist, :artist_link
+
+  # http://stackoverflow.com/questions/4464050/ruby-objects-and-json-serialization-without-rails
+  def to_json(options = {})
+    hash = {}
+    instance_variables.each do |var|
+      # remove the @ from the front
+      hash[var[1..-1]] = instance_variable_get var
+    end
+    hash.to_json
+  end
 end
 
 class CreditParser
