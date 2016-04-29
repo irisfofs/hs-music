@@ -115,6 +115,7 @@ function cover_filename(track) {
     return final;
   } else {
     // TODO: return some generic cover page
+    // also learn when one isn't there and replace that also
     return undefined;
   }
 }
@@ -129,14 +130,29 @@ function d3stuff(data) {
 
   var tracker = new HeightTracker(cover_size + spacing);
 
+  // Do this once as opposed to every time d3 needs x
+  // UGH but now it'll break on resizing page...
+  // well that was broken anyway
+  data.forEach((d) => {
+    d.x = page_num_to_x(d.page);
+    d.y = (height/2) + (cover_size + spacing) * tracker.getHeight(d);
+  })
+
+  var connecting_lines = chart.selectAll("whatever")
+      .data(data)
+    .enter().append("line")
+      .attr("x1", (d) => d.x)
+      .attr("x2", (d) => d.x)
+      .attr("y1", (d) => d.y)
+      .attr("y2", (d) => height / 2)
+      .attr("stroke", "white")
+      .attr("stroke-width", 1);
+
   var covers = chart.selectAll("g")
       .data(data)
     .enter().append("g")
       .attr("transform", (d) => {
-        d.x = page_num_to_x(d.page);
-        var y = (height/2) + (cover_size + spacing) * tracker.getHeight(d);
-
-        return `translate(${d.x - cover_size / 2}, ${y - cover_size / 2})`;
+        return `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`;
       });
 
   covers.append("image")
