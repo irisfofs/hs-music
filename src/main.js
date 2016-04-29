@@ -1,25 +1,8 @@
-var getJSON = function(url) {
-  return new Promise(function(resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status == 200) {
-        resolve(xhr.response);
-      } else {
-        reject(status);
-      }
-    };
-    xhr.send();
-  });
-};
+const d3 = require('d3');
+const data = require('./data.json');
 
-
-getJSON('/data.json').then(function(data) {
-  console.log(data);
-  d3stuff(data);
-});
+// require styles
+require('./main.css');
 
 // these should go somewhere better than just... sitting here ugh
 var width = 1920;
@@ -27,6 +10,9 @@ var height = 1000;
 var cover_size = 60;
 var border_size = 1;
 var spacing = 5;
+
+console.log(data);
+d3stuff(data);
 
 function drawActs(chart) {
   /* Act information */

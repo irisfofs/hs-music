@@ -1,4 +1,4 @@
 covers/
 node_modules/
-dist/bundle.js
+dist/
 Gemfile.lock
