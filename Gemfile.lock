@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    english (0.6.3)
+      language
+    json (2.2.0)
+    language (0.6.0)
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.3-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  english
+  json
+  nokogiri
+
+BUNDLED WITH
+   2.0.1
