@@ -42,22 +42,26 @@ class CreditParser
     sound_credits = load_credits_file
 
     sound_credits.css('.credit').map do |credit|
-      elems = credit.elements
-      rec = {}
-
-      parse_credit_entry(rec, credit)
-    end
+      rec = parse_page_and_title(credit)
+      rec && parse_credit_entry(rec, credit)
+    end.compact
   end
 
   def reparse_file(tracks)
     sound_credits = load_credits_file
 
-    tracks.zip(sound_credits.css('.credit')).map do |track, credit|
+    sound_credits.css('.credit').map do |credit|
+      rec = parse_page_and_title(credit)
+
+      return nil unless rec
+
+      track = tracks.find { |t| t[:page] == rec[:page] }
       parse_credit_entry(track, credit)
-    end
+    end.compact
   end
 
-  def parse_credit_entry(rec, credit_el)
+  def parse_page_and_title(credit_el)
+    rec = {}
     elems = credit_el.elements
 
     if elems[0].text =~ /#{PAGE}\s*-\s*#{TITLE}/
@@ -73,10 +77,18 @@ class CreditParser
         rec[:track_link] = (info_of_a(elems[1]) || [nil, nil])[1]
       else
         puts "no match for element: #{elems.map(&:text)}"
+        return nil
       end
     else
       puts "no match for element: #{elems.map(&:text)}"
+      return nil
     end
+
+    rec
+  end
+
+  def parse_credit_entry(rec, credit_el)
+    elems = credit_el.elements
 
     # grab link to page
     rec[:page_link] = (info_of_a(elems[0]) || [nil, nil])[1]
