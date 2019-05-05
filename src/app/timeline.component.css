@@ -4,6 +4,7 @@
 	position: absolute;
 	border: 7px solid;
 	box-sizing: border-box;
+	pointer-events: none;
 }
 
 .universe-outline.alpha {
