@@ -20,7 +20,7 @@ class CoverArtScraper
   def scrape_track(track)
     return if File.exist? cover_filename(track)
 
-    page = Nokogiri::HTML(open(track.track_link))
+    page = Nokogiri::HTML(open(track[:track_link]))
     img_src = page.at_css(COVER_IMG_SELECTOR).attr(:href)
 
     IO.copy_stream(open(img_src), cover_filename(track))
