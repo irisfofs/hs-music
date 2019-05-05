@@ -233,6 +233,13 @@ function drawActs(chart) {
           .delay((d) => fraction_of_comic(d.page - first_page) * total_rollout)
           .attr('x2', (d) => page_num_to_x(d.page + d.length));
 
+  const tip =
+      d3Tip()
+          .attr('class', 'd3-tip cover-tooltip')
+          .offset([-10, 0])
+          .html(
+              (d: ImportantEvent) => (`<p>${d.title}</p><p>${d.subtitle}</p>`));
+
   const act_circles = chart.selectAll('circle')
                           .data(combined_data)
                           .enter()
@@ -243,6 +250,8 @@ function drawActs(chart) {
                           .attr('stroke-width', 3)
                           .attr('fill', d => d.color)
                           .attr('r', 0)
+                          .on('mouseover', tip.show)
+                          .on('mouseout', tip.hide)
                           .transition()
                           .ease(d3.easeSin)  // sin-out
                           .duration(circle_duration)
@@ -250,6 +259,8 @@ function drawActs(chart) {
                               (d, i) => total_rollout / 3 +
                                   (i / combined_data.length) * total_rollout)
                           .attr('r', 8);
+
+  act_circles.call(tip);
 
   // d3.transition()
   //   .each(function () {
@@ -334,6 +345,7 @@ function d3stuff() {
 
   const tip = d3Tip()
                   .attr('class', 'd3-tip cover-tooltip')
+                  .offset([-10, 0])
                   .html((d) => (`<p>${d.title} - ${d.artist}</p>
 <p>${d.page_title}</p>`));
 
