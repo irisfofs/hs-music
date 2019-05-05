@@ -5,6 +5,7 @@ import d3Tip from 'd3-tip';
 import rawData from '../assets/data.json';
 import {ComicEvent, landmarks} from '../data/act_information';
 
+import {HeightTracker} from './height_tracker';
 import {D3Item, Track} from './track';
 
 const data: Track[] = rawData.map((raw) => new Track(raw));
@@ -262,71 +263,4 @@ function cover_filename(track: Track) {
   // TODO: return some generic cover page
   // also learn when one isn't there and replace that also
   return undefined;
-}
-
-function HeightTracker(item_width: number) {
-  const items = [];
-
-  this.getHeight = function getHeight(track: Track) {
-    // use the stored x
-    console.log(`${track.x}: ${track.title}`);
-    // binary search
-    const insert_at = binarySearch(track, 0, items.length - 1);
-
-    // now traverse left and right and see how many are within 'range'
-    const blocked_heights = new Set();
-    for (let i = insert_at - 1; i >= 0 && i < items.length; i--) {
-      if (track.x - items[i].x > item_width) {
-        break;
-      }
-      blocked_heights.add(items[i].heightLevel);
-    }
-
-    for (let i = insert_at; i >= 0 && i < items.length; i++) {
-      if (items[i].x - track.x > item_width) {
-        break;
-      }
-      blocked_heights.add(items[i].heightLevel);
-    }
-
-    // get the first not-blocked height
-    let potential_height = 0;
-    do {
-      potential_height *= -1;  // flip sign again
-      potential_height++;
-      if (!blocked_heights.has(potential_height)) {
-        break;
-      }
-      potential_height *= -1;  // flip sign
-    } while (blocked_heights.has(potential_height));
-
-    track.heightLevel = potential_height;
-
-    // finally insert this track at the index
-    items.splice(insert_at, 0, track);
-
-    return track.heightLevel;
-  };
-
-  function binarySearch(track: D3Item, start: number, end: number) {
-    if (items.length === 0) {
-      return 0;
-    }
-    // end case: one or two element range
-    if (track.x < items[start].x) {
-      return start;  // insert before start
-    } else if (track.x > items[end].x) {
-      return end + 1;  // insert after end
-    }
-
-    if (start === end || end - start === 1) {
-      return start + 1;  // insert right after start
-    }
-
-    const midpoint = Math.floor((start + end) / 2);
-    if (track.x <= items[midpoint].x) {
-      return binarySearch(track, start, midpoint);
-    }
-    return binarySearch(track, midpoint + 1, end);
-  }
 }
