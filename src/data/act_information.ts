@@ -90,14 +90,24 @@ export const landmarks: {side1: ComicEvent[], side2: ComicEvent[]} = {
       subtitle: 'penis ouija',
       color: HS_LIME
     },
-    {title: 'Act 6 Act 3', page: 4820, subtitle: 'Nobles', color: HS_GRAY},
+    {
+      title: 'Act 6 Act 3',
+      page: 4820,
+      subtitle: 'Nobles',
+      color: HS_GRAY,
+    },
     {
       title: 'Act 6 Intermission 3',
       page: 5263,
       subtitle: 'Ballet of the Dancestors',
       color: HS_LIME
     },
-    {title: 'Act 6 Act 4', page: 5438, subtitle: 'Void', color: HS_GRAY},
+    {
+      title: 'Act 6 Act 4',
+      page: 5438,
+      subtitle: 'Void',
+      color: HS_GRAY,
+    },
     {
       title: 'Act 6 Intermission 4',
       page: 5441,
@@ -116,42 +126,77 @@ export const landmarks: {side1: ComicEvent[], side2: ComicEvent[]} = {
       subtitle: 'I\'M PUTTING YOU ON SPEAKER CRAB.',
       color: HS_LIME
     },
-    {title: 'Act 6 Act 6', page: 6243, subtitle: '', color: HS_GREEN},
+    {
+      title: 'Act 6 Act 6',
+      page: 6243,
+      subtitle: '',
+      color: HS_GREEN,
+    },
     {
       title: 'Act 6 Act 6 Intermission 1',
       page: 6278,
       subtitle: '',
       color: HS_GRAY
     },
-    {title: 'Act 6 Act 6 Act 2', page: 6475, subtitle: '', color: HS_GREEN},
+    {
+      title: 'Act 6 Act 6 Act 2',
+      page: 6475,
+      subtitle: '',
+      color: HS_GREEN,
+    },
     {
       title: 'Act 6 Act 6 Intermission 2',
       page: 6531,
       subtitle: '',
       color: HS_GRAY
     },
-    {title: 'Act 6 Act 6 Act 3', page: 6853, subtitle: '', color: HS_GREEN},
+    {
+      title: 'Act 6 Act 6 Act 3',
+      page: 6853,
+      subtitle: '',
+      color: HS_GREEN,
+    },
     {
       title: 'Act 6 Act 6 Intermission 3',
       page: 6901,
       subtitle: '',
       color: HS_GRAY
     },
-    {title: 'Act 6 Act 6 Act 4', page: 6921, subtitle: '', color: HS_GREEN},
+    {
+      title: 'Act 6 Act 6 Act 4',
+      page: 6921,
+      subtitle: '',
+      color: HS_GREEN,
+    },
     {
       title: 'Act 6 Act 6 Intermission 4',
       page: 6944,
       subtitle: '',
       color: HS_GRAY
     },
-    {title: 'Act 6 Act 6 Act 5', page: 7409, subtitle: '', color: HS_GREEN},
+    {
+      title: 'Act 6 Act 6 Act 5',
+      page: 7409,
+      subtitle: '',
+      color: HS_GREEN,
+    },
     {
       title: 'Act 6 Act 6 Intermission 5',
       page: 7449,
       subtitle: '',
       color: HS_GRAY
     },
-    {title: 'EOA6', page: 8087, subtitle: 'Collide.', color: 'green'},
-    {title: 'Act 7', page: 8127, subtitle: '', color: 'white'},
+    {
+      title: 'EOA6',
+      page: 8087,
+      subtitle: 'Collide.',
+      color: HS_GREEN,
+    },
+    {
+      title: 'Act 7',
+      page: 8127,
+      subtitle: '',
+      color: 'white',
+    },
   ],
 };

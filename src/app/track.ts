@@ -1,4 +1,11 @@
-export class Track {
+// TODO: Look if this exists in d3 code.
+export interface D3Item {
+  x?: number;
+  y?: number;
+  baseY?: number;
+}
+
+export class Track implements D3Item {
   page: number;
   title: string;
   trackLink?: string;
@@ -10,6 +17,10 @@ export class Track {
   pageTitle: string;
 
   heightLevel: number = 0;
+
+  x?: number;
+  y?: number;
+  baseY?: number;
 
   constructor(trackJson: {
     page?: string,

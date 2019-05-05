@@ -5,14 +5,7 @@ import d3Tip from 'd3-tip';
 import rawData from '../assets/data.json';
 import {ComicEvent, landmarks} from '../data/act_information';
 
-import {Track} from './track';
-
-// TODO: Look if this exists in d3 code.
-interface D3Item {
-  x?: number;
-  y?: number;
-  baseY?: number;
-}
+import {D3Item, Track} from './track';
 
 const data: Track[] = rawData.map((raw) => new Track(raw));
 
@@ -25,8 +18,7 @@ const SPACING = 5;
 
 const FIRST_PAGE = 1;
 // Chosen somewhat arbitrarily.
-// const last_page = 8130;
-const LAST_PAGE = 4109;
+const LAST_PAGE = 8130;
 const PAGE_SPAN = LAST_PAGE - FIRST_PAGE;
 
 @Component({
@@ -41,14 +33,6 @@ export class TimelineComponent {
   }
 }
 
-interface ImportantEvent {
-  title: string;
-  page: number;
-  subtitle: string;
-  color: string;
-  length?: number;
-}
-
 const HS_RED = '#e00707';
 const HS_BLUE = '#0715cd';
 const HS_LIME = '#4ac925';
@@ -61,9 +45,8 @@ function d3stuff() {
   // ooo you should have a slick AF animation of it drawing the act line
 
   const cover_group = chart.append('g');
-  const act_line = chart.append('g');
-
-  drawActs(act_line);
+  const act_line1 = chart.append('g');
+  const act_line2 = chart.append('g');
 
   // Really feeling like I should call a helper method with side 1, then side 2.
   const tracker1 = new HeightTracker(COVER_SIZE + SPACING);
@@ -80,7 +63,7 @@ function d3stuff() {
     }
   });
 
-  side1Covers.forEach((d: Track&D3Item) => {
+  side1Covers.forEach((d: Track) => {
     d.x = pageNumToX(d.page, landmarks.side1);
     d.baseY = HEIGHT / 4;
     d.y = d.baseY + (COVER_SIZE + SPACING) * tracker1.getHeight(d);
@@ -95,7 +78,18 @@ function d3stuff() {
   const fraction_of_comic = (page_count) =>
       page_count / landmarks.side1[landmarks.side1.length - 1].page;
 
-  const total_rollout = 4000;
+  const totalRollout = 4000;
+
+  const side1Rollout =
+      (landmarks.side1[landmarks.side1.length - 1].page - FIRST_PAGE) /
+      PAGE_SPAN * totalRollout;
+  const side2Delay =
+      (landmarks.side2[0].page - FIRST_PAGE) / PAGE_SPAN * totalRollout;
+
+  drawActs(act_line1, landmarks.side1, HEIGHT / 4, 0, side1Rollout);
+  drawActs(
+      act_line2, landmarks.side2, 3 * HEIGHT / 4, side2Delay, totalRollout);
+
   cover_group.selectAll('.drop-line')
       .data(data)
       .enter()
@@ -110,8 +104,8 @@ function d3stuff() {
       .duration(500)
       .ease(d3.easeCubic)  // cubic-in
       .delay(
-          (d) => total_rollout / 2 +
-              fraction_of_comic(d.page - FIRST_PAGE) * total_rollout)
+          (d) => totalRollout / 2 +
+              fraction_of_comic(d.page - FIRST_PAGE) * totalRollout)
       .attr('y1', (d) => d.y);
 
   const tip = d3Tip()
@@ -139,8 +133,8 @@ function d3stuff() {
       .duration(250)
       .ease(d3.easeCubic)  // cubic-out
       .delay(
-          (d) => 500 + total_rollout / 2 +
-              fraction_of_comic(d.page - FIRST_PAGE) * total_rollout)
+          (d) => 500 + totalRollout / 2 +
+              fraction_of_comic(d.page - FIRST_PAGE) * totalRollout)
       .style('opacity', 1);
 
   // put it behind the image so the border peeks out from behind
@@ -157,55 +151,54 @@ function d3stuff() {
       .attr('height', COVER_SIZE);
 }
 
-function drawActs(chart) {
-  const height_midpoint = HEIGHT / 2;
-
-  // why am I not just using this to begin with...?
-  const combined_data = landmarks.side1;
-  for (let i = combined_data.length - 1; i >= 0; i--) {
-    const next_i = Math.min(i + 1, combined_data.length - 1);
-    combined_data[i].length =
-        combined_data[next_i].page - combined_data[i].page;
+function drawActs(
+    chart: d3.Selection<d3.BaseType, {}, HTMLElement, unknown>,
+    events: ComicEvent[], actLineHeight: number, delay: number,
+    rolloutDuration: number) {
+  for (let i = events.length - 1; i >= 0; i--) {
+    const next_i = Math.min(i + 1, events.length - 1);
+    events[i].length = events[next_i].page - events[i].page;
   }
 
-  const total_rollout = 4000;
   const circle_duration = 300;
 
-  const last_page = combined_data[combined_data.length - 1].page;
-  const fraction_of_comic = (page_count) => page_count / last_page;
+  const firstPage = events[0].page;
+  const lastPage = events[events.length - 1].page;
+  const fractionOfSide = (pageCount) => pageCount / lastPage;
 
   const act_lines =
       chart.selectAll('line')
-          .data(combined_data)
+          .data(events)
           .enter()
           .append('line')
-          .attr('y1', height_midpoint)
-          .attr('y2', height_midpoint)
-          .attr('x1', (d) => page_num_to_x(d.page))
-          .attr('x2', (d) => page_num_to_x(d.page))
+          .attr('y1', actLineHeight)
+          .attr('y2', actLineHeight)
+          .attr('x1', (d) => pageNumToX(d.page, events))
+          .attr('x2', (d) => pageNumToX(d.page, events))
           .attr('stroke', (d) => d.color)
           .attr('stroke-width', 3)
           .transition()
           .ease(d3.easeSin)  // sin-out
           // TODO: write functions to clear up these computations
           // like until_act_line_passed or something...
-          .duration((d) => fraction_of_comic(d.length) * total_rollout)
-          .delay((d) => fraction_of_comic(d.page - FIRST_PAGE) * total_rollout)
-          .attr('x2', (d) => page_num_to_x(d.page + d.length));
+          .duration((d) => fractionOfSide(d.length) * rolloutDuration)
+          .delay(
+              (d) =>
+                  delay + fractionOfSide(d.page - firstPage) * rolloutDuration)
+          .attr('x2', (d) => pageNumToX(d.page + d.length, events));
 
   const tip =
       d3Tip()
           .attr('class', 'd3-tip cover-tooltip')
           .offset([-10, 0])
-          .html(
-              (d: ImportantEvent) => (`<p>${d.title}</p><p>${d.subtitle}</p>`));
+          .html((d: ComicEvent) => (`<p>${d.title}</p><p>${d.subtitle}</p>`));
 
   const act_circles = chart.selectAll('circle')
-                          .data(combined_data)
+                          .data(events)
                           .enter()
                           .append('circle')
-                          .attr('cx', (d) => page_num_to_x(d.page))
-                          .attr('cy', height_midpoint)
+                          .attr('cx', (d) => pageNumToX(d.page, events))
+                          .attr('cy', actLineHeight)
                           .attr('stroke', (d) => d.color)
                           .attr('stroke-width', 3)
                           .attr('fill', d => d.color)
@@ -216,8 +209,8 @@ function drawActs(chart) {
                           .ease(d3.easeSin)  // sin-out
                           .duration(circle_duration)
                           .delay(
-                              (d, i) => total_rollout / 3 +
-                                  (i / combined_data.length) * total_rollout)
+                              (d, i) => delay + rolloutDuration / 3 +
+                                  (i / events.length) * rolloutDuration)
                           .attr('r', 8);
 
   act_circles.call(tip);
@@ -274,7 +267,7 @@ function cover_filename(track: Track) {
 function HeightTracker(item_width: number) {
   const items = [];
 
-  this.getHeight = function getHeight(track: Track&D3Item) {
+  this.getHeight = function getHeight(track: Track) {
     // use the stored x
     console.log(`${track.x}: ${track.title}`);
     // binary search
