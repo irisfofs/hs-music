@@ -9,55 +9,79 @@ export class HeightTracker {
     this.itemWidth = itemWidth;
   }
 
-  getHeight(track: Track) {
-    // use the stored x
-    console.log(`${track.x}: ${track.title}`);
+  testHeight(x: number): {index: number, height: number} {
     // binary search
-    const insert_at = this.binarySearch(track, 0, this.items.length - 1);
+    const insert_at = this.binarySearch(x, 0, this.items.length - 1);
 
     // now traverse left and right and see how many are within 'range'
     const blocked_heights = new Set();
     for (let i = insert_at - 1; i >= 0 && i < this.items.length; i--) {
-      if (track.x - this.items[i].x > this.itemWidth) {
+      const item = this.items[i];
+      if (x - item.displayX > this.itemWidth) {
         break;
       }
-      blocked_heights.add(this.items[i].heightLevel);
+      blocked_heights.add(item.heightLevel);
     }
 
     for (let i = insert_at; i >= 0 && i < this.items.length; i++) {
-      if (this.items[i].x - track.x > this.itemWidth) {
+      const item = this.items[i];
+      if (item.displayX - x > this.itemWidth) {
         break;
       }
-      blocked_heights.add(this.items[i].heightLevel);
+      blocked_heights.add(item.heightLevel);
     }
 
     // get the first not-blocked height
-    let potential_height = 0;
+    let height = 0;
     do {
-      potential_height *= -1;  // flip sign again
-      potential_height++;
-      if (!blocked_heights.has(potential_height)) {
+      height *= -1;  // flip sign again
+      height++;
+      if (!blocked_heights.has(height)) {
         break;
       }
-      potential_height *= -1;  // flip sign
-    } while (blocked_heights.has(potential_height));
+      height *= -1;  // flip sign
+    } while (blocked_heights.has(height));
 
-    track.heightLevel = potential_height;
+    return {index: insert_at, height};
+  }
+
+  addTrack(track: Track): number {
+    const testXs = [
+      track.x - this.itemWidth * .4,
+      track.x - this.itemWidth * .3,
+      track.x,
+      track.x + this.itemWidth * .3,
+      track.x + this.itemWidth * .4,
+    ];
+
+    let best = Number.POSITIVE_INFINITY;
+    let bestIndex = -1;
+    for (const x of testXs) {
+      const potential = this.testHeight(x);
+
+      if (Math.abs(potential.height) < Math.abs(best)) {
+        track.displayX = x;
+        track.heightLevel = potential.height;
+        best = potential.height;
+        bestIndex = potential.index;
+      }
+    }
 
     // finally insert this track at the index
-    this.items.splice(insert_at, 0, track);
+    this.items.splice(bestIndex, 0, track);
 
     return track.heightLevel;
   }
 
-  private binarySearch(track: D3Item, start: number, end: number) {
+
+  private binarySearch(x: number, start: number, end: number) {
     if (this.items.length === 0) {
       return 0;
     }
     // end case: one or two element range
-    if (track.x < this.items[start].x) {
+    if (x < this.items[start].displayX) {
       return start;  // insert before start
-    } else if (track.x > this.items[end].x) {
+    } else if (x > this.items[end].displayX) {
       return end + 1;  // insert after end
     }
 
@@ -66,9 +90,9 @@ export class HeightTracker {
     }
 
     const midpoint = Math.floor((start + end) / 2);
-    if (track.x <= this.items[midpoint].x) {
-      return this.binarySearch(track, start, midpoint);
+    if (x <= this.items[midpoint].displayX) {
+      return this.binarySearch(x, start, midpoint);
     }
-    return this.binarySearch(track, midpoint + 1, end);
+    return this.binarySearch(x, midpoint + 1, end);
   }
 }

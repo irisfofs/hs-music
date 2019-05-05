@@ -67,13 +67,13 @@ function d3stuff() {
   side1Covers.forEach((d: Track) => {
     d.x = pageNumToX(d.page, landmarks.side1);
     d.baseY = HEIGHT / 4;
-    d.y = d.baseY + (COVER_SIZE + SPACING) * tracker1.getHeight(d);
+    d.y = d.baseY + (COVER_SIZE + SPACING) * tracker1.addTrack(d);
   });
 
   side2Covers.forEach((d: Track&D3Item) => {
     d.x = pageNumToX(d.page, landmarks.side2);
     d.baseY = 3 * HEIGHT / 4;
-    d.y = d.baseY + (COVER_SIZE + SPACING) * tracker2.getHeight(d);
+    d.y = d.baseY + (COVER_SIZE + SPACING) * tracker2.addTrack(d);
   });
 
   const fraction_of_comic = (page_count) =>
@@ -117,16 +117,15 @@ function d3stuff() {
 
   cover_group.call(tip);
 
-  const covers =
-      cover_group.selectAll('.cover')
-          .data(data)
-          .enter()
-          .append('g')
-          .attr(
-              'transform',
-              (d) =>
-                  `translate(${d.x - COVER_SIZE / 2}, ${d.y - COVER_SIZE / 2})`)
-          .style('opacity', 0);
+  const covers = cover_group.selectAll('.cover')
+                     .data(data)
+                     .enter()
+                     .append('g')
+                     .attr(
+                         'transform',
+                         (d) => `translate(${d.displayX - COVER_SIZE / 2}, ${
+                             d.y - COVER_SIZE / 2})`)
+                     .style('opacity', 0);
 
   covers.on('mouseover', tip.show).on('mouseout', tip.hide);
 

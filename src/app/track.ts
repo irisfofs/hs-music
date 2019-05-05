@@ -1,6 +1,7 @@
 // TODO: Look if this exists in d3 code.
 export interface D3Item {
   x?: number;
+  displayX?: number;
   y?: number;
   baseY?: number;
 }
@@ -19,6 +20,7 @@ export class Track implements D3Item {
   heightLevel: number = 0;
 
   x?: number;
+  displayX?: number;
   y?: number;
   baseY?: number;
 
