@@ -9,7 +9,7 @@ class CoverArtScraper
     cover_dir = "#{__dir__}/../src/covers"
     Dir.mkdir(cover_dir) unless File.exist? cover_dir
 
-    tracks_with_links = track_list.select(&:track_link)
+    tracks_with_links = track_list.select { |t| t[:track_link] }
     tracks_with_links.each_with_index { |t, i|
       scrape_track(t)
       printf("\rScraping covers: %d of %d", i + 1, tracks_with_links.length)
@@ -27,7 +27,7 @@ class CoverArtScraper
   end
 
   def cover_filename(track)
-    __dir__ + "/../src/assets/covers/cover_#{slugify(track.title)}.jpg"
+    __dir__ + "/../src/assets/covers/cover_#{slugify(track[:title])}.jpg"
   end
 
   def slugify(string)

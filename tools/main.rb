@@ -1,3 +1,5 @@
+require 'json'
+
 require_relative './credit_parser'
 require_relative './cover_art_scraper'
 require_relative './page_title_scraper'
@@ -13,5 +15,7 @@ tracks = CreditParser.new.get_info_for_file
 cover_art_scraper.scrape(tracks)
 PageTitleScraper.scrape(tracks)
 
-File.open(__dir__ + '/../src/assets/data.json', 'w') { |f| f.puts tracks.to_json }
+File.open(__dir__ + '/../src/assets/data.json', 'w') do |f|
+  f.puts JSON.dump(tracks)
+end
 
