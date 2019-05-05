@@ -3,26 +3,18 @@ import * as d3 from 'd3';
 import d3Tip from 'd3-tip';
 
 import rawData from '../assets/data.json';
+import {ComicEvent, landmarks} from '../data/act_information';
 
-interface Track {
-  page?: string;
-  title?: string;
-  track_link?: string;
-  page_link: string;
-  album: string;
-  album_link: string;
-  artist: string;
-  artist_link: string;
-  page_title?: string;
-}
+import {Track} from './track';
 
 // TODO: Look if this exists in d3 code.
 interface D3Item {
   x?: number;
   y?: number;
+  baseY?: number;
 }
 
-const data: Track[] = rawData;
+const data: Track[] = rawData.map((raw) => new Track(raw));
 
 // these should go somewhere better than just... sitting here ugh
 const width = 1920;
@@ -33,7 +25,8 @@ const spacing = 5;
 
 const first_page = 1;
 // Chosen somewhat arbitrarily.
-const last_page = 8130;
+// const last_page = 8130;
+const last_page = 4109;
 const page_span = last_page - first_page;
 
 @Component({
@@ -62,149 +55,113 @@ const HS_LIME = '#4ac925';
 const HS_GREEN = '#168500';
 const HS_GRAY = '#C6C6C6';
 
-function drawActs(chart) {
-  /* Act information */
-  const everything: {part1: ImportantEvent[], part2: ImportantEvent[]} = {
-    part1: [
-      {
-        title: 'Act 1',
-        page: 1,
-        subtitle: 'The Note Desolation Plays',
-        color: HS_RED
-      },
-      {
-        title: 'Act 2',
-        page: 248,
-        subtitle: 'Raise of the Conductor\'s Baton',
-        color: HS_RED
-      },
-      {
-        title: 'Act 3',
-        page: 759,
-        subtitle: 'Insane Corkscrew Haymakers',
-        color: HS_RED
-      },
-      {
-        title: 'Intermission',
-        page: 1154,
-        subtitle: 'Don\'t Bleed on the Suits',
-        color: HS_GREEN,
-      },
-      {
-        title: 'Act 4',
-        page: 1358,
-        subtitle: 'Flight of the Paradox Clones',
-        color: HS_RED
-      },
-    ],
-    part2: [
-      {
-        title: 'Act 5 Act 1',
-        page: 1989,
-        subtitle: 'MOB1US DOUBL3 R34CH4ROUND',
-        color: 'blue'
-      },
-      {
-        title: 'Act 5 Act 2',
-        page: 2626,
-        subtitle: 'He is already here.',
-        color: HS_RED
-      },
-      {title: 'EOA5', page: 4109, subtitle: 'Cascade.', color: 'black'},
-      {
-        title: 'Act 6 Act 1',
-        page: 4113,
-        subtitle: 'Through Broken Glass',
-        color: HS_GRAY
-      },
-      {
-        title: 'Act 6 Intermission 1',
-        page: 4295,
-        subtitle: 'corpse party',
-        color: HS_LIME
-      },
-      {
-        title: 'Act 6 Act 2',
-        page: 4419,
-        subtitle: 'Your shit is wrecked.',
-        color: HS_GRAY
-      },
-      {
-        title: 'Act 6 Intermission 2',
-        page: 4667,
-        subtitle: 'penis ouija',
-        color: HS_LIME
-      },
-      {title: 'Act 6 Act 3', page: 4820, subtitle: 'Nobles', color: HS_GRAY},
-      {
-        title: 'Act 6 Intermission 3',
-        page: 5263,
-        subtitle: 'Ballet of the Dancestors',
-        color: HS_LIME
-      },
-      {title: 'Act 6 Act 4', page: 5438, subtitle: 'Void', color: HS_GRAY},
-      {
-        title: 'Act 6 Intermission 4',
-        page: 5441,
-        subtitle: 'Dead',
-        color: HS_LIME
-      },
-      {
-        title: 'Act 6 Act 5',
-        page: 5571,
-        subtitle: 'Of Gods and Tricksters',
-        color: HS_GRAY
-      },
-      {
-        title: 'Act 6 Intermission 5',
-        page: 5927,
-        subtitle: 'I\'M PUTTING YOU ON SPEAKER CRAB.',
-        color: HS_LIME
-      },
-      {title: 'Act 6 Act 6', page: 6243, subtitle: '', color: HS_GREEN},
-      {
-        title: 'Act 6 Act 6 Intermission 1',
-        page: 6278,
-        subtitle: '',
-        color: HS_GRAY
-      },
-      {title: 'Act 6 Act 6 Act 2', page: 6475, subtitle: '', color: HS_GREEN},
-      {
-        title: 'Act 6 Act 6 Intermission 2',
-        page: 6531,
-        subtitle: '',
-        color: HS_GRAY
-      },
-      {title: 'Act 6 Act 6 Act 3', page: 6853, subtitle: '', color: HS_GREEN},
-      {
-        title: 'Act 6 Act 6 Intermission 3',
-        page: 6901,
-        subtitle: '',
-        color: HS_GRAY
-      },
-      {title: 'Act 6 Act 6 Act 4', page: 6921, subtitle: '', color: HS_GREEN},
-      {
-        title: 'Act 6 Act 6 Intermission 4',
-        page: 6944,
-        subtitle: '',
-        color: HS_GRAY
-      },
-      {title: 'Act 6 Act 6 Act 5', page: 7409, subtitle: '', color: HS_GREEN},
-      {
-        title: 'Act 6 Act 6 Intermission 5',
-        page: 7449,
-        subtitle: '',
-        color: HS_GRAY
-      },
-      {title: 'EOA6', page: 8087, subtitle: 'Collide.', color: 'green'},
-      {title: 'Act 7', page: 8127, subtitle: '', color: 'white'},
-    ],
-  };
+function d3stuff() {
+  const chart = d3.select('#chart').attr('width', width).attr('height', height);
 
+  // ooo you should have a slick AF animation of it drawing the act line
+
+  const cover_group = chart.append('g');
+  const act_line = chart.append('g');
+
+  drawActs(act_line);
+
+  // Really feeling like I should call a helper method with side 1, then side 2.
+  const tracker1 = new HeightTracker(cover_size + spacing);
+  const tracker2 = new HeightTracker(cover_size + spacing);
+
+  const side1End = landmarks.side1[landmarks.side1.length - 1].page;
+  const side1Covers = [];
+  const side2Covers = [];
+  data.forEach((d) => {
+    if (Number(d.page) <= side1End) {
+      side1Covers.push(d);
+    } else {
+      side2Covers.push(d);
+    }
+  });
+
+  side1Covers.forEach((d: Track&D3Item) => {
+    d.x = pageNumToX(d.page, landmarks.side1);
+    d.baseY = height / 4;
+    d.y = d.baseY + (cover_size + spacing) * tracker1.getHeight(d);
+  });
+
+  side2Covers.forEach((d: Track&D3Item) => {
+    d.x = pageNumToX(d.page, landmarks.side2);
+    d.baseY = 3 * height / 4;
+    d.y = d.baseY + (cover_size + spacing) * tracker2.getHeight(d);
+  });
+
+  const fraction_of_comic = (page_count) =>
+      page_count / landmarks.side1[landmarks.side1.length - 1].page;
+
+  const total_rollout = 4000;
+  cover_group.selectAll('.drop-line')
+      .data(data)
+      .enter()
+      .append('line')
+      .attr('x1', (d) => d.x)
+      .attr('x2', (d) => d.x)
+      .attr('y1', (d) => d.baseY)
+      .attr('y2', (d) => d.baseY)
+      .attr('stroke', 'black')
+      .attr('stroke-width', 1)
+      .transition()
+      .duration(500)
+      .ease(d3.easeCubic)  // cubic-in
+      .delay(
+          (d) => total_rollout / 2 +
+              fraction_of_comic(d.page - first_page) * total_rollout)
+      .attr('y1', (d) => d.y);
+
+  const tip = d3Tip()
+                  .attr('class', 'd3-tip cover-tooltip')
+                  .offset([-10, 0])
+                  .html((d) => (`<p>${d.title} - ${d.artist}</p>
+<p>${d.page_title}</p>`));
+
+  cover_group.call(tip);
+
+  const covers =
+      cover_group.selectAll('.cover')
+          .data(data)
+          .enter()
+          .append('g')
+          .attr(
+              'transform',
+              (d) =>
+                  `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`)
+          .style('opacity', 0);
+
+  covers.on('mouseover', tip.show).on('mouseout', tip.hide);
+
+  covers.transition()
+      .duration(250)
+      .ease(d3.easeCubic)  // cubic-out
+      .delay(
+          (d) => 500 + total_rollout / 2 +
+              fraction_of_comic(d.page - first_page) * total_rollout)
+      .style('opacity', 1);
+
+  // put it behind the image so the border peeks out from behind
+  covers.append('rect')
+      .attr('width', cover_size)
+      .attr('height', cover_size)
+      .attr('stroke', 'black')
+      .attr('stroke-width', border_size)
+      .attr('fill', 'black');
+
+  covers.append('image')
+      .attr('xlink:href', (d) => `/assets/covers/${cover_filename(d)}`)
+      .attr('width', cover_size)
+      .attr('height', cover_size);
+}
+
+function drawActs(chart) {
   const height_midpoint = height / 2;
 
   // why am I not just using this to begin with...?
-  const combined_data = everything.part1.concat(everything.part2);
+  const combined_data = landmarks.side1;
   for (let i = combined_data.length - 1; i >= 0; i--) {
     const next_i = Math.min(i + 1, combined_data.length - 1);
     combined_data[i].length =
@@ -213,6 +170,9 @@ function drawActs(chart) {
 
   const total_rollout = 4000;
   const circle_duration = 300;
+
+  const last_page = combined_data[combined_data.length - 1].page;
+  const fraction_of_comic = (page_count) => page_count / last_page;
 
   const act_lines =
       chart.selectAll('line')
@@ -279,7 +239,7 @@ function drawActs(chart) {
   //   });
 }
 
-function page_num_to_x(page) {
+function page_num_to_x(page: number) {
   const width_padding = 200;
 
   const usable_width = width - width_padding;
@@ -287,11 +247,18 @@ function page_num_to_x(page) {
   return homestuck_page_count / page_span * usable_width + width_padding / 2;
 }
 
-function fraction_of_comic(page_count) {
-  return page_count / page_span;
+function pageNumToX(page: number, side: ComicEvent[]) {
+  const width_padding = 200;
+  const usable_width = width - width_padding;
+
+  const sideStart = side[0].page;
+  const sidePageCount = side[side.length - 1].page - sideStart;
+
+  const pageCountInSide = page - sideStart;
+  return pageCountInSide / sidePageCount * usable_width + width_padding / 2;
 }
 
-function cover_filename(track) {
+function cover_filename(track: Track) {
   if (track.title) {
     const fn =
         track.title.toLowerCase().replace(/ /g, '_').replace(/[^\w-]/g, '');
@@ -304,92 +271,10 @@ function cover_filename(track) {
   return undefined;
 }
 
-function d3stuff() {
-  const chart = d3.select('#chart').attr('width', width).attr('height', height);
-
-  // ooo you should have a slick AF animation of it drawing the act line
-
-  const cover_group = chart.append('g');
-  const act_line = chart.append('g');
-
-  drawActs(act_line);
-
-  const tracker = new HeightTracker(cover_size + spacing);
-
-  // Do this once as opposed to every time d3 needs x
-  // UGH but now it'll break on resizing page...
-  // well that was broken anyway
-  data.forEach((d: Track&D3Item) => {
-    d.x = page_num_to_x(d.page);
-    d.y = (height / 2) + (cover_size + spacing) * tracker.getHeight(d);
-  });
-
-  const total_rollout = 4000;
-  cover_group.selectAll('.drop-line')
-      .data(data)
-      .enter()
-      .append('line')
-      .attr('x1', (d) => d.x)
-      .attr('x2', (d) => d.x)
-      .attr('y1', () => height / 2)
-      .attr('y2', () => height / 2)
-      .attr('stroke', 'black')
-      .attr('stroke-width', 1)
-      .transition()
-      .duration(500)
-      .ease(d3.easeCubic)  // cubic-in
-      .delay(
-          (d) => total_rollout / 2 +
-              fraction_of_comic(d.page - first_page) * total_rollout)
-      .attr('y1', (d) => d.y);
-
-  const tip = d3Tip()
-                  .attr('class', 'd3-tip cover-tooltip')
-                  .offset([-10, 0])
-                  .html((d) => (`<p>${d.title} - ${d.artist}</p>
-<p>${d.page_title}</p>`));
-
-  cover_group.call(tip);
-
-  const covers =
-      cover_group.selectAll('.cover')
-          .data(data)
-          .enter()
-          .append('g')
-          .attr(
-              'transform',
-              (d) =>
-                  `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`)
-          .style('opacity', 0);
-
-  covers.on('mouseover', tip.show).on('mouseout', tip.hide);
-
-  covers.transition()
-      .duration(250)
-      .ease(d3.easeCubic)  // cubic-out
-      .delay(
-          (d) => 500 + total_rollout / 2 +
-              fraction_of_comic(d.page - first_page) * total_rollout)
-      .style('opacity', 1);
-
-  // put it behind the image so the border peeks out from behind
-  covers.append('rect')
-      .attr('width', cover_size)
-      .attr('height', cover_size)
-      .attr('stroke', 'black')
-      .attr('stroke-width', border_size)
-      .attr('fill', 'black');
-
-  covers.append('image')
-      .attr('xlink:href', (d) => `/assets/covers/${cover_filename(d)}`)
-      .attr('width', cover_size)
-      .attr('height', cover_size);
-}
-
-function HeightTracker(item_width) {
+function HeightTracker(item_width: number) {
   const items = [];
 
-  this.getHeight = function getHeight(track) {
+  this.getHeight = function getHeight(track: Track&D3Item) {
     // use the stored x
     console.log(`${track.x}: ${track.title}`);
     // binary search
@@ -401,14 +286,14 @@ function HeightTracker(item_width) {
       if (track.x - items[i].x > item_width) {
         break;
       }
-      blocked_heights.add(items[i].height_level);
+      blocked_heights.add(items[i].heightLevel);
     }
 
     for (let i = insert_at; i >= 0 && i < items.length; i++) {
       if (items[i].x - track.x > item_width) {
         break;
       }
-      blocked_heights.add(items[i].height_level);
+      blocked_heights.add(items[i].heightLevel);
     }
 
     // get the first not-blocked height
@@ -422,15 +307,15 @@ function HeightTracker(item_width) {
       potential_height *= -1;  // flip sign
     } while (blocked_heights.has(potential_height));
 
-    track.height_level = potential_height;
+    track.heightLevel = potential_height;
 
     // finally insert this track at the index
     items.splice(insert_at, 0, track);
 
-    return track.height_level;
+    return track.heightLevel;
   };
 
-  function binarySearch(track, start, end) {
+  function binarySearch(track: D3Item, start: number, end: number) {
     if (items.length === 0) {
       return 0;
     }
