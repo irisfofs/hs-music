@@ -1,103 +1,153 @@
 <!DOCTYPE html>
-<!--[if IE 9 ]>    <html dir="ltr" lang="en-US" class="ie9"> <![endif]-->
-<!--[if (gte IE 10)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-US"><!--<![endif]-->
-<html class="meta">
-  <head>
-  <!-- application -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <meta charset="UTF-8">
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9bR1EHUREW","queueTime":0,"applicationTime":6,"agent":""}</script>
-<script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>Homestuck.com</title>
-    <meta name="description" content="A tale about a boy and his friends and a game they play together. About 8,000 pages. Don&#39;t say we didn&#39;t warn you.">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<title>MS Paint Adventures</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+/* reset */
 
-    <link rel="stylesheet" media="all" href="/assets/manifest-ui-6899ffdac37dfd042f92f6df2c8d4634a7272f2599194f1c37e5c2360d583d96.css" />
-    <script src="/assets/manifest-ui-fce0378923b7c1d035a43aa61190214b6e24a8ccde18063f11e889fdfd14d6fd.js"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/kek1uwn.css">
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
-  ga('create', 'UA-136373-45', 'auto');
-  ga('send', 'pageview');
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 
-</script>
+ol, ul {
+	list-style: none;
+}
 
+blockquote, q {
+	quotes: none;
+}
 
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
 
-  </head>
-  <body class="flex flex-column">
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-    <div class="o_content">
-      <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-        <li class="o_primary-nav-item slide-candycorn div-candycorn"><a class="o_primary-nav-link" style="color:#29ff4a" href="/">HOME</a></li><!--
-     --><li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="/stories">READ</a></li><!--
-     --><li class="o_primary-nav-item slide-candycorn div-candycorn"><a class="o_primary-nav-link" style="color:#39d5f6" href="/info-story">INFO</a></li><!--
-     --><li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#f7f72a" href="/info-shop">SHOP</a></li><!--
-     --><li class="o_primary-nav-item slide-candycorn div-candycorn"><a class="o_primary-nav-link" style="color:#f7f72a" href="/info-games">GAMES</a></li><!--
-     --><li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#ffb529" href="/news">NEWS</a></li><!--
-     --><li class="o_primary-nav-item slide-candycorn"><a class="o_primary-nav-link" style="color:#ffb529"  href="/info-more">MORE</a></li>
-      </ul>
-    </nav>
-    <div id="site-search" class="o_site-search disp-ib">
-      <form action="/search" method="GET">
-        <input name="search" type="search" class="o_search-ac o_site-search-field" placeholder="" autocomplete="off">
-        <button class="o_site-search-btn"><i class="icon-search"></i></button>
-      </form>
-    </div>
-  </div>
-</header>
-    
+body,td,th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 
-      <div class="row bg-hs-gray bg-light-gray--md pad-t-md--md pad-b-lg--md">
-  <div class="mar-x-auto disp-bl bg-hs-gray" style="max-width:650px;">
-    <h2 class="pad-t-md pad-x-lg--md type-center type-hs-header line-tight">SOUND CREDITS </h2>
-    <div class="bg-white mar-t-md pad-x-md pad-t-md pad-t-lg--md pad-b-xl pad-b-xxl--md type-center type-md">
+/* end reset */
 
-<style>
-  p.explain, .credit, .song {
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-  }
-  p.explain {
-    display: block;
-    text-align: justify;
-    margin-bottom: 1em;
-    font-weight: normal;
-  }
-  .credit {
-    display: block;
-    margin-bottom: 3em;
-    font-weight: normal;
-  }
-  .song {
-    font-weight: bold;
-  }
+html {
+	width: 100%
+	height: 100%
+}
+
+body {
+	min-height: 100%
+	min-width: 100%;
+	background-color: #DDDDDD;
+}
+
+strong {
+	font-weight: bold;
+}
+
+#wrapper {
+	width: 800px;
+	margin: 0 auto;
+	min-height: 100%;
+	background-color: #EEEEEE
+}
+
+#banner {
+	width: 388px;
+	margin: 0 auto 14px;
+}
+
+#content {
+	width: 600px;
+	margin: 0 auto 36px;
+	background-color: #FFFFFF;
+}
+
+#content-inner {
+	width: 480px;
+	margin: 0 auto 36px;
+	text-align: center;
+}
+
+h1 {
+	font-weight: bold;
+	font-family: courier, monospace;
+	color:#000000;
+	font-size: 24pt;
+}
+
+p.explain {
+	display: block;
+	width: 480px;
+	text-align: justify;
+	margin-bottom: 1em;
+}
+
+.credit {
+	display: block;
+	width: 480px;
+	margin-bottom: 3em;
+}
+
+.song {
+	font-weight: bold;
+}
+
 </style>
-<div class="type-bs pad-x-0 pad-x-lg--md">
-<p class="explain">The music and sound for <a href="/story" target="_blank">Homestuck</a> is created by a large group of collaborators who correspond through the Internet. The audio appearing in the various animations are credited on this page. These songs are available to listen and download along with many other tracks at the official <a href="http://homestuck.bandcamp.com" target="_blank">Homestuck music store</a> on Bandcamp.</p>
+
+<link rel="alternate" type="application/rss+xml" title="MS Paint Adventures" href="http://www.mspaintadventures.com/rss/rss.xml">
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="banner"><a href="http://www.mspaintadventures.com/"><img src="soundcredits_files/logo.gif" alt="MS Paint Adventures"></a></div>
+
+		<div id="content">
+			<div id="content-inner">
+<h1>SOUND CREDITS</h1>
+
+<p class="explain">The music and sound for <a href="http://www.mspaintadventures.com/?s=6" target="_blank">Homestuck</a> is created by a large group of <a href="http://whatpumpkin.com/musicianlist.html" target="_blank">collaborators</a>
+ who correspond through the Internet. The audio appearing in the various
+ animations are credited on this page. These songs are available to 
+listen and download along with many other tracks at the official <a href="http://homestuck.bandcamp.com/" target="_blank">Homestuck music store</a> on Bandcamp.</p>
 
 <br>
 <br>
 
 <div class="credit">
-<!-- Original MSPA page: 001977 -->
-<p><a href="/story/77" target="_blank">Page 77</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-piano-refrain-2" target="_blank">"Showtime (Piano Refrain)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=001977" target="_blank">Page 1977</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-piano-refrain-2" target="_blank">"Showtime (Piano Refrain)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>Written by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 <p>Arranged and performed by <a href="http://www.mspaforums.com/member.php?55727-afterthought" target="_blank">Kevin Regamey</a></p>
@@ -105,43 +155,37 @@
 
 
 <div class="credit">
-<!-- Original MSPA page: 001982 -->
-<p><a href="/story/82" target="_blank">Page 82</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=001982" target="_blank">Page 1982</a></p>
 <p>Foley by <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 001988 -->
-<p><a href="/story/88" target="_blank">Page 88</a> - <strong><a href="http://homestuck.bandcamp.com/track/harlequin-2">"Harlequin"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=001988" target="_blank">Page 1988</a> - <strong><a href="http://homestuck.bandcamp.com/track/harlequin-2">"Harlequin"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 <p>Foley by <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 001990 -->
-<p><a href="/story/90" target="_blank">Page 90</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-original-mix-2" target="_blank">"Showtime (Original Mix)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=001990" target="_blank">Page 1990</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-original-mix-2" target="_blank">"Showtime (Original Mix)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002037 -->
-<p><a href="/story/137" target="_blank">Page 137</a> - <strong><a href="http://homestuck.bandcamp.com/track/sburban-jungle-2" target="_blank">"Sburban Jungle"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002037" target="_blank">Page 2037</a> - <strong><a href="http://homestuck.bandcamp.com/track/sburban-jungle-2" target="_blank">"Sburban Jungle"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>By <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002086 -->
-<p><a href="/story/186" target="_blank">Page 186</a> - <strong><a href="http://homestuck.bandcamp.com/track/harlequin-2" target="_blank">"Harlequin"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002086" target="_blank">Page 2086</a> - <strong><a href="http://homestuck.bandcamp.com/track/harlequin-2" target="_blank">"Harlequin"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002122 -->
-<p><a href="/story/222" target="_blank">Page 222</a> - <strong><a href="http://homestuck.bandcamp.com/track/aggrieve-violin-refrain-2" target="_blank">"Aggrieve (Violin Refrain)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002122" target="_blank">Page 2122</a> - <strong><a href="http://homestuck.bandcamp.com/track/aggrieve-violin-refrain-2" target="_blank">"Aggrieve (Violin Refrain)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>Written by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 <p>Arrangement by <a href="http://www.mspaforums.com/member.php?55368-Adghar" target="_blank">Andrew Huo</a></p>
@@ -149,143 +193,125 @@
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002146 -->
-<p><a href="/story/246" target="_blank">Page 246</a> - <strong><a href="http://homestuck.bandcamp.com/track/sburban-countdown-2" target="_blank">"Sburban Countdown"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002146" target="_blank">Page 2146</a> - <strong><a href="http://homestuck.bandcamp.com/track/sburban-countdown-2" target="_blank">"Sburban Countdown"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>Written by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 <p>Arrangement by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002153 -->
-<p><a href="/story/253" target="_blank">Page 253</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-piano-refrain-2" target="_blank">"Showtime (Piano Refrain)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002153" target="_blank">Page 2153</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-piano-refrain-2" target="_blank">"Showtime (Piano Refrain)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>Written by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 <p>Arrangement by <a href="http://www.mspaforums.com/member.php?55727-afterthought" target="_blank">Kevin Regamey</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002238 -->
-<p><a href="/story/338" target="_blank">Page 338</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002238" target="_blank">Page 2238</a></p>
 <p>01, 02 by Andrew Hussie</p>  
 <p>03, 04, 05, 11 by <a href="http://www.mspaforums.com/member.php?55189-ebagtheftp" target="_blank">Gabe Nezovic</a></p>
 <p>06, 07, 12, 13, 14, 15, 16 by <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p>
 <p>08, 09 by <a href="http://www.mspaforums.com/member.php?55718-xerxes333" target="_blank">xerxes333</a></p>
-<p>10 by <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a></p>
+<p>10 by <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002288 -->
-<p><a href="/story/388" target="_blank">Page 388</a> - <strong><a href="http://homestuck.bandcamp.com/track/aggrieve-2" target="_blank">"Aggrieve"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002288" target="_blank">Page 2288</a> - <strong><a href="http://homestuck.bandcamp.com/track/aggrieve-2" target="_blank">"Aggrieve"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002293 -->
-<p><a href="/story/393" target="_blank">Page 393</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-imp-strife-mix-2" target="_blank">"Showtime (Imp Strife Mix)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002293" target="_blank">Page 2293</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-imp-strife-mix-2" target="_blank">"Showtime (Imp Strife Mix)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
-<p>Arrangement by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
+<p>Written by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
+<p>Arrangement by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002300 -->
-<p><a href="/story/400" target="_blank">Page 400</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-imp-strife-mix-2" target="_blank">"Showtime (Imp Strife Mix)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002300" target="_blank">Page 2300</a> - <strong><a href="http://homestuck.bandcamp.com/track/showtime-imp-strife-mix-2" target="_blank">"Showtime (Imp Strife Mix)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
-<p>Arrangement by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
+<p>Written by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
+<p>Arrangement by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
 <p>Fanfare by <a href="http://www.mspaforums.com/member.php?57283-Norock" target="_blank">Curt Blakeslee</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002318 -->
-<p><a href="/story/418" target="_blank">Page 418</a> - <strong><a href="http://homestuck.bandcamp.com/track/nannaquin-2" target="_blank">"Nannaquin"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002318" target="_blank">Page 2318</a> - <strong><a href="http://homestuck.bandcamp.com/track/nannaquin-2" target="_blank">"Nannaquin"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002322 -->
-<p><a href="/story/422" target="_blank">Page 422</a> - <strong><a href="http://homestuck.bandcamp.com/track/skies-of-skaia-2" target="_blank">"Skies of Skaia"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002322" target="_blank">Page 2322</a> - <strong><a href="http://homestuck.bandcamp.com/track/skies-of-skaia-2" target="_blank">"Skies of Skaia"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002376 -->
-<p><a href="/story/476" target="_blank">Page 476</a> - <strong><a href="http://homestuck.bandcamp.com/track/harlequin-rock-version-2" target="_blank">"Harlequin (Rock Version)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002376" target="_blank">Page 2376</a> - <strong><a href="http://homestuck.bandcamp.com/track/harlequin-rock-version-2" target="_blank">"Harlequin (Rock Version)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>Written by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
-<p>Arrangement by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>Arrangement by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 <p>Guitar by <a href="http://www.mspaforums.com/member.php?55360-Olnoname" target="_blank">Joseph Aylsworth</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002544 -->
-<p><a href="/story/644" target="_blank">Page 644</a> - <a href="http://homestuck.bandcamp.com/track/john-sleeps-skaian-magicant" target="_blank"><strong>"John Sleeps"</strong></a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002544" target="_blank">Page 2544</a> - <a href="http://homestuck.bandcamp.com/track/john-sleeps-skaian-magicant" target="_blank"><strong>"John Sleeps"</strong></a></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>"Showtime" by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>"Showtime" by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 <p>Arrangement by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002551 -->
-<p><a href="/story/651" target="_blank">Page 651</a> - <a href="http://homestuck.bandcamp.com/track/john-sleeps-skaian-magicant" target="_blank"><strong>"Skaian Magicant"</strong></a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002551" target="_blank">Page 2551</a> - <a href="http://homestuck.bandcamp.com/track/john-sleeps-skaian-magicant" target="_blank"><strong>"Skaian Magicant"</strong></a></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>"Skies of Skaia" by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 <p>Arrangement by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002565 -->
-<p><a href="/story/665" target="_blank">Page 665</a> - <strong><a href="http://homestuck.bandcamp.com/track/upward-movement-dave-owns-2" target="_blank">"Upward Movement (Dave Owns)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002565" target="_blank">Page 2565</a> - <strong><a href="http://homestuck.bandcamp.com/track/upward-movement-dave-owns-2" target="_blank">"Upward Movement (Dave Owns)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a></p>
+<p>By <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002621 -->
-<p><a href="/story/721" target="_blank">Page 721</a> - <strong><a href="http://homestuck.bandcamp.com/track/vagabounce-2" target="_blank">"Vagabounce"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002621" target="_blank">Page 2621</a> - <strong><a href="http://homestuck.bandcamp.com/track/vagabounce-2" target="_blank">"Vagabounce"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55789-MightyMoose" target="_blank">David Ko</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002655 -->
-<p><a href="/story/755" target="_blank">Page 755</a> - <strong>"Sburban Reversal"</strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002655" target="_blank">Page 2655</a> - <strong>"Sburban Reversal"</strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002657 -->
-<p><a href="/story/757" target="_blank">Page 757</a> - <strong><a href="http://homestuck.bandcamp.com/track/explore-2" target="_blank">"Explore"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002657" target="_blank">Page 2657</a> - <strong><a href="http://homestuck.bandcamp.com/track/explore-2" target="_blank">"Explore"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
-<p>Arrangement by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>Written by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
+<p>Arrangement by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002669 -->
-<p><a href="/story/769" target="_blank">Page 769</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002669" target="_blank">Page 2669</a></p>
 <p>Flute performed by <a href="http://www.youtube.com/user/gazorra" target="_blank">Jan Van Den Hemel</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002722 -->
-<p><a href="/story/822" target="_blank">Page 822</a> - <strong><a href="http://homestuck.bandcamp.com/track/gardener" target="_blank">"Gardener"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002722" target="_blank">Page 2722</a> - <strong><a href="http://homestuck.bandcamp.com/track/gardener" target="_blank">"Gardener"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>"The Beginning of Something Really Excellent" by <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?58929-Tenebrais" target="_blank">Steve Everson</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002730 -->
-<p><a href="/story/830" target="_blank">Page 830</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002730" target="_blank">Page 2730</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/showtime-remix-2" target="_blank">"Showtime Remix"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>"Showtime (Piano Refrain)" by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a> and <a href="http://www.mspaforums.com/member.php?55727-afterthought" target="_blank">Kevin Regamey</a></p>
+<p>"Showtime (Piano Refrain)" by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a> and <a href="http://www.mspaforums.com/member.php?55727-afterthought" target="_blank">Kevin Regamey</a></p>
 <p>Remix by <a href="http://www.mspaforums.com/member.php?55189-ebagtheftp" target="_blank">Gabe Nezovic</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/aggrieve-remix-2" target="_blank">"Aggrieve Remix"</a></strong></p>
@@ -295,20 +321,20 @@
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/verdancy-bassline-2" target="_blank">"Verdancy (Bassline)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a></p>
+<p>By <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/potential-verdancy" target="_blank">"Potential Verdancy"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a></p>
+<p>Written by <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a></p>
 <p>Arranged by <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/ohgodwhat-2" target="_blank">"Ohgodwhat"</a></strong></p>
-<p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p><p>By <a href="http://omgtsn.tumblr.com" target="_blank">Nick Smalley</a></p>
+<p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p><p>By <a href="http://omgtsn.tumblr.com/" target="_blank">Nick Smalley</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/ohgodwhat-remix-2" target="_blank">"Ohgodwhat Remix"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://omgtsn.tumblr.com" target="_blank">Nick Smalley</a></p>
-<p>Remix by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>Written by <a href="http://omgtsn.tumblr.com/" target="_blank">Nick Smalley</a></p>
+<p>Remix by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/rediscover-fusion-2" target="_blank">"Rediscover Fusion"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
@@ -320,79 +346,70 @@
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/explore-remix-2" target="_blank">"Explore Remix"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>"Explore" by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a> and <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>"Explore" by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a> and <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 <p>Remix by <a href="http://www.mspaforums.com/member.php?55189-ebagtheftp" target="_blank">Gabe Nezovic</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002733 -->
-<p><a href="/story/833" target="_blank">Page 833</a> - <strong><a href="http://homestuck.bandcamp.com/track/dead-shuffle" target="_blank">"Dead Shuffle"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002733" target="_blank">Page 2733</a> - <strong><a href="http://homestuck.bandcamp.com/track/dead-shuffle" target="_blank">"Dead Shuffle"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/midnight-crew-drawing-dead-2" target="_blank">Midnight Crew: Drawing Dead</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002736 -->
-<p><a href="/story/836" target="_blank">Page 836</a> - <strong><a href="http://homestuck.bandcamp.com/track/beatdown-strider-style-2" target="_blank">"Beatdown (Strider Style)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002736" target="_blank">Page 2736</a> - <strong><a href="http://homestuck.bandcamp.com/track/beatdown-strider-style-2" target="_blank">"Beatdown (Strider Style)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?57283-Norock" target="_blank">Curt Blakeslee</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002743 -->
-<p><a href="/story/843" target="_blank">Page 843</a> - <strong><a href="http://homestuck.bandcamp.com/track/harleboss-2" target="_blank">"Harleboss"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002743" target="_blank">Page 2743</a> - <strong><a href="http://homestuck.bandcamp.com/track/harleboss-2" target="_blank">"Harleboss"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>"Harlequin" by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
-<p>Arranged by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>Arranged by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002771 -->
-<p><a href="/story/871" target="_blank">Page 871</a> - <strong><a href="http://homestuck.bandcamp.com/track/beatdown-round-2-2" target="_blank">"Beatdown Round 2"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002771" target="_blank">Page 2771</a> - <strong><a href="http://homestuck.bandcamp.com/track/beatdown-round-2-2" target="_blank">"Beatdown Round 2"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?57283-Norock" target="_blank">Curt Blakeslee</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002818 -->
-<p><a href="/story/918" target="_blank">Page 918</a> - <strong><a href="http://homestuck.bandcamp.com/track/dissension-original-2" target="_blank">"Dissension (Original)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002818" target="_blank">Page 2818</a> - <strong><a href="http://homestuck.bandcamp.com/track/dissension-original-2" target="_blank">"Dissension (Original)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55789-MightyMoose" target="_blank">David Ko</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002838 -->
-<p><a href="/story/938" target="_blank">Page 938</a> - <strong><a href="http://homestuck.bandcamp.com/track/chorale-for-jaspers-2" target="_blank">"Chorale for Jaspers"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002838" target="_blank">Page 2838</a> - <strong><a href="http://homestuck.bandcamp.com/track/chorale-for-jaspers-2" target="_blank">"Chorale for Jaspers"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>By <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<p><a href="/story/pony">Secret Page</a> - <strong><a href="http://homestuck.bandcamp.com/track/pony-chorale-2" target="_blank">"Pony Chorale"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=pony">Secret Page</a> - <strong><a href="http://homestuck.bandcamp.com/track/pony-chorale-2" target="_blank">"Pony Chorale"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>By <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002848 -->
-<p><a href="/story/948" target="_blank">Page 948</a> - <strong><a href="http://homestuck.bandcamp.com/track/revelawesome-2" target="_blank">"Revelawesome"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002848" target="_blank">Page 2848</a> - <strong><a href="http://homestuck.bandcamp.com/track/revelawesome-2" target="_blank">"Revelawesome"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002879 -->
-<p><a href="/story/979" target="_blank">Page 979</a> - <strong><a href="http://homestuck.bandcamp.com/track/hardlyquin-2" target="_blank">"Hardlyquin"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002879" target="_blank">Page 2879</a> - <strong><a href="http://homestuck.bandcamp.com/track/hardlyquin-2" target="_blank">"Hardlyquin"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002880 -->
-<p><a href="/story/980" target="_blank">Page 980</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002880" target="_blank">Page 2880</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/an-unbreakable-union" target="_blank">"An Unbreakable Union"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
-By <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a>
+By <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a>
 <p>-</p> 
 <p><strong><a href="http://homestuck.bandcamp.com/track/carefree-victory-2" target="_blank">"Carefree Victory"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
@@ -401,86 +418,75 @@ Arrangement by <a href="http://www.mspaforums.com/member.php?55368-Adghar" targe
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002926 -->
-<p><a href="/story/1026" target="_blank">Page 1026</a> - <strong><a href="http://homestuck.bandcamp.com/track/the-beginning-of-something-really-excellent" target="_blank">"The Beginning of Something Really Excellent"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002926" target="_blank">Page 2926</a> - <strong><a href="http://homestuck.bandcamp.com/track/the-beginning-of-something-really-excellent" target="_blank">"The Beginning of Something Really Excellent"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>By <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002970 -->
-<p><a href="/story/1070" target="_blank">Page 1070</a>  - <strong><a href="http://homestuck.bandcamp.com/track/versus" target="_blank">"Versus"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002970" target="_blank">Page 2970</a>  - <strong><a href="http://homestuck.bandcamp.com/track/versus" target="_blank">"Versus"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 002973 -->
-<p><a href="/story/1073" target="_blank">Page 1073</a> - <strong><a href="http://homestuck.bandcamp.com/track/ballad-of-awakening-2" target="_blank">"Ballad of Awakening"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=002973" target="_blank">Page 2973</a> - <strong><a href="http://homestuck.bandcamp.com/track/ballad-of-awakening-2" target="_blank">"Ballad of Awakening"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a>  
+<p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a>  
+</p></div>
+
+<div class="credit">
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003049" target="_blank">Page 3049</a> - <strong><a href="http://homestuck.bandcamp.com/track/sburban-jungle-2" target="_blank">"Sburban Jungle"</a></strong></p>
+<p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
+<p>By <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003049 -->
-<p><a href="/story/1149" target="_blank">Page 1149</a> - <strong><a href="http://homestuck.bandcamp.com/track/sburban-jungle-2" target="_blank">"Sburban Jungle"</a></strong></p>
-<p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
-</div>
-
-<div class="credit">
-<!-- Original MSPA page: 003167 -->
-<p><a href="/story/1267" target="_blank">Page 1267</a> - <strong><a href="http://homestuck.bandcamp.com/track/three-in-the-morning" target="_blank">"Three in the Morning"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003167" target="_blank">Page 3167</a> - <strong><a href="http://homestuck.bandcamp.com/track/three-in-the-morning" target="_blank">"Three in the Morning"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/midnight-crew-drawing-dead-2" target="_blank">Midnight Crew: Drawing Dead</a></p>
 <p>By <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003258 -->
-<p><a href="/story/1358" target="_blank">Page 1358</a> - <strong><a href="http://homestuck.bandcamp.com/track/doctor-2" target="_blank">"Doctor"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003258" target="_blank">Page 3258</a> - <strong><a href="http://homestuck.bandcamp.com/track/doctor-2" target="_blank">"Doctor"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>Written by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
+<p>Written by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?59520-The-One-Electronic" target="_blank">Michael Vallejo</a> and <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003307 -->
-<p><a href="/story/1407" target="_blank">Page 1407</a> - <strong><a href="http://homestuck.bandcamp.com/track/endless-climb-2" target="_blank">"Endless Climb"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003307" target="_blank">Page 3307</a> - <strong><a href="http://homestuck.bandcamp.com/track/endless-climb-2" target="_blank">"Endless Climb"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
-<p>By <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
+<p>By <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003541 -->
-<p><a href="/story/1641" target="_blank">Page 1641</a> - <strong><a href="http://homestuck.bandcamp.com/track/atomyk-ebonpyre-2" target="_blank">"Atomyk Ebonpyre"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003541" target="_blank">Page 3541</a> - <strong><a href="http://homestuck.bandcamp.com/track/atomyk-ebonpyre-2" target="_blank">"Atomyk Ebonpyre"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003556 -->
-<p><a href="/story/1656" target="_blank">Page 1656</a> - <strong><a href="http://homestuck.bandcamp.com/track/bed-of-roses-dreams-of-derse" target="_blank">"Bed of Rose's"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003556" target="_blank">Page 3556</a> - <strong><a href="http://homestuck.bandcamp.com/track/bed-of-roses-dreams-of-derse" target="_blank">"Bed of Rose's"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003568 -->
-<p><a href="/story/1668" target="_blank">Page 1668</a> - <strong><a href="http://homestuck.bandcamp.com/track/black-2" target="_blank">"Black"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003568" target="_blank">Page 3568</a> - <strong><a href="http://homestuck.bandcamp.com/track/black-2" target="_blank">"Black"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-1-4" target="_blank">Homestuck Vol. 1-4</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003620 -->
-<p><a href="/story/1720" target="_blank">Page 1720</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003620" target="_blank">Page 3620</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/unsheathd" target="_blank">"Unsheath'd"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>By <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/welcome-to-the-new-extreme" target="_blank">"Welcome to the New Extreme"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
-<p>"Sburban Jungle" by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>"Sburban Jungle" by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 <p>Remix by <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/octoroon-rangoon" target="_blank">"Octoroon Rangoon"</a></strong></p>
@@ -488,8 +494,8 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/derse-dreamers" target="_blank">"Derse Dreamers"</a></strong></p>
-<p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/prospit-derse" target="_blank">Prospit & Derse</a></p>
-<p>By <a href="http://www.solatrus.com" target="_blank">Jeremy Iamurri </a></p>
+<p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/prospit-derse" target="_blank">Prospit &amp; Derse</a></p>
+<p>By <a href="http://www.solatrus.com/" target="_blank">Jeremy Iamurri </a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/phantasmagoric-waltz" target="_blank">"Phantasmagoric Waltz"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
@@ -497,48 +503,42 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003701 -->
-<p><a href="/story/1801" target="_blank">Page 1801</a> - <strong><a href="http://homestuck.bandcamp.com/track/skaian-skirmish" target="_blank">"Skaian Skirmish"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003701" target="_blank">Page 3701</a> - <strong><a href="http://homestuck.bandcamp.com/track/skaian-skirmish" target="_blank">"Skaian Skirmish"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>Written by <a href="http://www.mspaforums.com/member.php?55368-Adghar" target="_blank">Andrew Huo</a></p>
 <p>Remixed by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003831 -->
-<p><a href="/story/1931" target="_blank">Page 1931</a> - <strong><a href="http://homestuck.bandcamp.com/track/how-do-i-live-bunny-back-in-the-box-version" target="_blank">"How Do I Live (Bunny Back in the Box Version)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003831" target="_blank">Page 3831</a> - <strong><a href="http://homestuck.bandcamp.com/track/how-do-i-live-bunny-back-in-the-box-version" target="_blank">"How Do I Live (Bunny Back in the Box Version)"</a></strong></p>
 <p>"How Do I Live" by Dianne Warren</p>
-<p>Performed by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
-<p>Solo by <a href="http://omgtsn.tumblr.com" target="_blank">Nick Smalley</a></p>
+<p>Performed by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
+<p>Solo by <a href="http://omgtsn.tumblr.com/" target="_blank">Nick Smalley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 003840 -->
-<p><a href="/story/1940" target="_blank">Page 1940</a> - <strong><a href="http://homestuck.bandcamp.com/track/descend" target="_blank">"Descend"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=003840" target="_blank">Page 3840</a> - <strong><a href="http://homestuck.bandcamp.com/track/descend" target="_blank">"Descend"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004478 -->
-<p><a href="/story/2578" target="_blank">Page 2578</a> - <strong><a href="http://homestuck.bandcamp.com/track/crystamanthequins" target="_blank">"Crystamanthequins"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004478" target="_blank">Page 4478</a> - <strong><a href="http://homestuck.bandcamp.com/track/crystamanthequins" target="_blank">"Crystamanthequins"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>"Crystalanthemums" by <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
 <p>"Mannequin" by <a href="http://www.mspaforums.com/member.php?59078-perrybob" target="_blank">Perry Sullivan</a></p>
-<p>Arranged by <a href="http://jitmakesstuff.tumblr.com" target="_blank">Erik "Jit" Scheele</a></p> 
+<p>Arranged by <a href="http://jitmakesstuff.tumblr.com/" target="_blank">Erik "Jit" Scheele</a></p> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004526 -->
-<p><a href="/story/2626" target="_blank">Page 2626</a> - <strong><a href="http://homestuck.bandcamp.com/track/homestuck" target="_blank">"Homestuck"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004526" target="_blank">Page 4526</a> - <strong><a href="http://homestuck.bandcamp.com/track/homestuck" target="_blank">"Homestuck"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>"Homestuck Anthem" by <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004692 -->
-<p><a href="/story/2792" target="_blank">Page 2792</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004692" target="_blank">Page 4692</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/karkats-theme" target="_blank">"Karkat's Theme"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">AlterniaBound</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
@@ -579,7 +579,7 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 <p>By <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p>
 <p>-</p>
 <p><strong>"Hero's Growth"</strong></p>
-<p>By <a href="http://www.solatrus.com" target="_blank">Jeremy Iamurri</a></p>
+<p>By <a href="http://www.solatrus.com/" target="_blank">Jeremy Iamurri</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/phrenic-phever" target="_blank">"Phrenic Phever"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
@@ -587,7 +587,7 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/walk-stab-walk-r-e" target="_blank">"Walk-Stab-Walk (R&amp;E)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
-<p>By <a href="http://jitmakesstuff.tumblr.com" target="_blank">Erik "Jit" Scheele</a></p>
+<p>By <a href="http://jitmakesstuff.tumblr.com/" target="_blank">Erik "Jit" Scheele</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/horschestra" target="_blank">"Horschestra"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
@@ -595,62 +595,54 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004748 -->
-<p><a href="/story/2848" target="_blank">Page 2848</a> - <strong><a href="http://homestuck.bandcamp.com/track/let-the-squiddles-sleep-end-theme" target="_blank">"Let the Squiddles Sleep (End Theme)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004748" target="_blank">Page 4748</a> - <strong><a href="http://homestuck.bandcamp.com/track/let-the-squiddles-sleep-end-theme" target="_blank">"Let the Squiddles Sleep (End Theme)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/squiddles" target="_blank">Squiddles!</a></p>
 <p>By <a href="http://spellmynamewithabang.tumblr.com/" target="_blank">Robert J! Lake</a></p>
 <p>Samples "Squiddles!" by <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004827 -->
-<p><a href="/story/2927" target="_blank">Page 2927</a> - <strong><a href="http://homestuck.bandcamp.com/track/umbral-ultimatum" target="_blank">"Umbral Ultimatum"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004827" target="_blank">Page 4827</a> - <strong><a href="http://homestuck.bandcamp.com/track/umbral-ultimatum" target="_blank">"Umbral Ultimatum"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004888 -->
-<p><a href="/story/2988" target="_blank">Page 2988</a> - <strong><a href="http://homestuck.bandcamp.com/track/frost" target="_blank">"Frost"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004888" target="_blank">Page 4888</a> - <strong><a href="http://homestuck.bandcamp.com/track/frost" target="_blank">"Frost"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
-<p>By <a href="http://www.solatrus.com" target="_blank">Jeremy "Solatrus" Iamurri </a></p>
+<p>By <a href="http://www.solatrus.com/" target="_blank">Jeremy "Solatrus" Iamurri </a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004901 -->
-<p><a href="/story/3001" target="_blank">Page 3001</a> - <strong><a href="http://homestuck.bandcamp.com/track/sunslammer" target="_blank">"Sunslammer"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004901" target="_blank">Page 4901</a> - <strong><a href="http://homestuck.bandcamp.com/track/sunslammer" target="_blank">"Sunslammer"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>"Sunsetter" by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?56012-Beatfox" target="_blank">Seth "Beatfox" Peelle </a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004979 -->
-<p><a href="/story/3079" target="_blank">Page 3079</a> - <strong><a href="http://homestuck.bandcamp.com/track/planet-healer" target="_blank">"Planet Healer"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004979" target="_blank">Page 4979</a> - <strong><a href="http://homestuck.bandcamp.com/track/planet-healer" target="_blank">"Planet Healer"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
-<p>"Doctor" by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
+<p>"Doctor" by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?56012-Beatfox" target="_blank">Seth "Beatfox" Peelle </a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 004987 -->
-<p><a href="/story/3087" target="_blank">Page 3087</a> - <strong><a href="http://homestuck.bandcamp.com/track/savior-of-the-waking-world" target="_blank">"Savior of the Waking World"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=004987" target="_blank">Page 4987</a> - <strong><a href="http://homestuck.bandcamp.com/track/savior-of-the-waking-world" target="_blank">"Savior of the Waking World"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
-<p>"Doctor" by <a href="http://buzinkai.net" target="_blank">George Buzinkai</a></p>
+<p>"Doctor" by <a href="http://buzinkai.net/" target="_blank">George Buzinkai</a></p>
 <p>Arranged by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005197 -->
-<p><a href="/story/3297" target="_blank">Page 3297</a> - <strong><a href="http://homestuck.bandcamp.com/track/megalovania" target="_blank">"MeGaLoVania"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005197" target="_blank">Page 5197</a> - <strong><a href="http://homestuck.bandcamp.com/track/megalovania" target="_blank">"MeGaLoVania"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>Guitar by <a href="http://www.mspaforums.com/member.php?1002797-Tensei" target="_blank">Joren "Tensei" de Bruin </a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005221 -->
-<p><a href="/story/3321" target="_blank">Page 3321</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005221" target="_blank">Page 5221</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/darling-kanaya" target="_blank">"Darling Kanaya"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">AlterniaBound</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
@@ -674,8 +666,7 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005338 -->
-<p><a href="/story/3438" target="_blank">Page 3438</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005338" target="_blank">Page 5338</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/horschestra-strong-version" target="_blank">"Horschestra STRONG Version"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">Alterniabound</a></p>
 <p>By <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
@@ -699,56 +690,50 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005420 -->
-<p><a href="/story/3520" target="_blank">Page 3520</a> - <strong><a href="http://homestuck.bandcamp.com/track/trollian-standoff" target="_blank">"Trollian Standoff"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005420" target="_blank">Page 5420</a> - <strong><a href="http://homestuck.bandcamp.com/track/trollian-standoff" target="_blank">"Trollian Standoff"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">Alterniabound</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?1002797-Tensei" target="_blank">Joren "Tensei" de Bruin </a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005579 -->
-<p><a href="/story/3679" target="_blank">Page 3679</a> - <strong><a href="http://homestuck.bandcamp.com/track/warhammer-of-zillyhoo" target="_blank">"Warhammer of Zillyhoo"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005579" target="_blank">Page 5579</a> - <strong><a href="http://homestuck.bandcamp.com/track/warhammer-of-zillyhoo" target="_blank">"Warhammer of Zillyhoo"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>By <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>By <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005595 -->
-<p><a href="/story/3695" target="_blank">Page 3695</a> - <strong><a href="http://homestuck.bandcamp.com/track/black-rose-green-sun" target="_blank">"Black Rose / Green Sun"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005595" target="_blank">Page 5595</a> - <strong><a href="http://homestuck.bandcamp.com/track/black-rose-green-sun" target="_blank">"Black Rose / Green Sun"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005596 -->
-<p><a href="/story/3696" target="_blank">Page 3696</a> - <strong><a href="http://homestuck.bandcamp.com/track/at-the-price-of-oblivion" target="_blank">"At the Price of Oblivion"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005596" target="_blank">Page 5596</a> - <strong><a href="http://homestuck.bandcamp.com/track/at-the-price-of-oblivion" target="_blank">"At the Price of Oblivion"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005618 -->
-<p><a href="/story/3718" target="_blank">Page 3718</a> - <strong>"Secret ROM"</strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005618" target="_blank">Page 5618</a> - <strong>"Secret ROM"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005625 -->
-<a href="/story/3725" target="_blank">Page 3725</a> 
+<a href="http://www.mspaintadventures.com/?s=6&amp;p=005625" target="_blank">Page 5625</a> 
 <p><strong><a href="http://homestuck.bandcamp.com/track/trollcops" target="_blank">"Trollcops"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">Alterniabound</a></p>
-<p>By <a href="http://jitmakesstuff.tumblr.com" target="_blank">Erik "Jit" Scheele</a></p>
+<p>By <a href="http://jitmakesstuff.tumblr.com/" target="_blank">Erik "Jit" Scheele</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/havoc-to-be-wrought" target="_blank">"Havoc to Be Wrought"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>By <a href="http://eidolonorpheus.tumblr.com" target="_blank">Thomas "EidolonOrpheus" Ferkol</a></p>
+<p>By <a href="http://eidolonorpheus.tumblr.com/" target="_blank">Thomas "EidolonOrpheus" Ferkol</a></p>
 <p>-</p> 
 <p><strong><a href="http://homestuck.bandcamp.com/track/rumble-at-the-rink" target="_blank">"Rumble at the Rink"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>-</p>  
 <p><strong>"Unlabeled Record"</strong></p>
-<p>By <a href="http://jitmakesstuff.tumblr.com" target="_blank">Erik "Jit" Scheele</a></p>
+<p>By <a href="http://jitmakesstuff.tumblr.com/" target="_blank">Erik "Jit" Scheele</a></p>
 <p>-</p> 
 <p><strong>"XROM"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
@@ -758,32 +743,28 @@ By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005644 -->
-<p><a href="/story/3744" target="_blank">Page 3744</a> - <strong><a href="http://homestuck.bandcamp.com/track/terezi-owns" target="_blank">"Terezi Owns"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005644" target="_blank">Page 5644</a> - <strong><a href="http://homestuck.bandcamp.com/track/terezi-owns" target="_blank">"Terezi Owns"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>Written by <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a></p>
+<p>Written by <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a></p>
 <p>Arrangement by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005660 -->
-<p><a href="/story/3760" target="_blank">Page 3760</a> - <strong><a href="http://homestuck.bandcamp.com/track/bl1nd-just1c3-1nv3st1g4t1on" target="_blank">"BL1ND JUST1C3 : 1NV3ST1G4T1ON !!"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005660" target="_blank">Page 5660</a> - <strong><a href="http://homestuck.bandcamp.com/track/bl1nd-just1c3-1nv3st1g4t1on" target="_blank">"BL1ND JUST1C3 : 1NV3ST1G4T1ON !!"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">AlterniaBound</a></p>
-By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a>  
+By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a>  
 Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a> 
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 005985 -->
-<p><a href="/story/4085" target="_blank">Page 4085</a> - <strong><a href="http://homestuck.bandcamp.com/track/the-carnival" target="_blank">"The Carnival"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=005985" target="_blank">Page 5985</a> - <strong><a href="http://homestuck.bandcamp.com/track/the-carnival" target="_blank">"The Carnival"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>By <a href="http://jitmakesstuff.tumblr.com" target="_blank">Erik "Jit" Scheele</a></p>
+<p>By <a href="http://jitmakesstuff.tumblr.com/" target="_blank">Erik "Jit" Scheele</a></p>
 <p>"Harlequin" by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006009 -->
-<p><a href="/story/4109" target="_blank">Page 4109</a> - <strong><a href="http://homestuck.bandcamp.com/track/cascade" target="_blank">"Cascade"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/cascade.php?s=6&amp;p=6009" target="_blank">Page 6009</a> - <strong><a href="http://homestuck.bandcamp.com/track/cascade" target="_blank">"Cascade"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Vol. 8</a></p>
 <p>-</p>
 <p>Part 1 - <strong>"Cascade (Beta)"</strong></p>
@@ -796,81 +777,72 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 <p>-</p>
 <p>Part 3 - <strong><a href="http://homestuck.bandcamp.com/track/savior-of-the-dreaming-dead" target="_blank">"Savior of the Dreaming Dead"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
-<p>By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 <p>"Doctor" by <a href="http://www.mspaforums.com/member.php?57659-Buzinkai" target="_blank">George Buzinkai</a></p>
 <p>"Savior of the Waking World" by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>-</p>
 <p>Part 4 - <strong>"Black Hole / Green Sun"</strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Vol. 8</a></p>
-<p>"Black Rose / Green Sun" by <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>"Black Rose / Green Sun" by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 <p>Remixed by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>Guitar by <a href="http://www.mspaforums.com/member.php?1002797-Tensei" target="_blank">Joren "Tensei" de Bruin </a></p>
 <p>Violin by Kelly Sadwin</p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006011 -->
-<p><a href="/story/4111" target="_blank">Page 4111</a> - <strong><a href="http://homestuck.bandcamp.com/track/english" target="_blank">"English"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006011" target="_blank">Page 6011</a> - <strong><a href="http://homestuck.bandcamp.com/track/english" target="_blank">"English"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/the-felt" target="_blank">The Felt</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006013 -->
-<p><a href="/story/4113" target="_blank">Page 4113</a> - <strong><a href="http://homestuck.bandcamp.com/track/homestuck-anthem" target="_blank">"Homestuck Anthem"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006013" target="_blank">Page 6013</a> - <strong><a href="http://homestuck.bandcamp.com/track/homestuck-anthem" target="_blank">"Homestuck Anthem"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
 <p>By <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006175 -->
-<p><a href="/story/4275" target="_blank">Page 4275</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006175" target="_blank">Page 6175</a></p>
 <p>Foley by <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006273 -->
-<p><a href="/story/4373" target="_blank">Page 4373</a> - <strong>"Frustracean"</strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006273" target="_blank">Page 6273</a> - <strong>"Frustracean"</strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Vol. 9</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>Based on "Hardleyquin" by <a href="http://www.mspaforums.com/member.php?55018-AgentParsec" target="_blank">Mark Hadley</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006290 -->
-<p><a href="/story/4390" target="_blank">Page 4390</a> - <strong><a href="http://homestuck.bandcamp.com/track/infinity-mechanism" target="_blank">"Infinity Mechanism"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006290" target="_blank">Page 6290</a> - <strong><a href="http://homestuck.bandcamp.com/track/infinity-mechanism" target="_blank">"Infinity Mechanism"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Vol. 8</a></p>
-<p>By <a href="http://eidolonorpheus.tumblr.com" target="_blank">Thomas "EidolonOrpheus" Ferkol</a></p>
+<p>By <a href="http://eidolonorpheus.tumblr.com/" target="_blank">Thomas "EidolonOrpheus" Ferkol</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006386 -->
-<p><a href="/story/4486" target="_blank">Page 4486</a> - <strong><a href="http://homestuck.bandcamp.com/track/even-in-death" target="_blank">"Even in Death"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006386" target="_blank">Page 6386</a> - <strong><a href="http://homestuck.bandcamp.com/track/even-in-death" target="_blank">"Even in Death"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-7-at-the-price-of-oblivion" target="_blank">Homestuck Vol. 7: At the Price of Oblivion</a></p>
 <p>By <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
-<p>Samples "Upward Movement" by <a href="http://upward-kali.tumblr.com" target="_blank">Robert Blaker</a></p>
+<p>Samples "Upward Movement" by <a href="http://upward-kali.tumblr.com/" target="_blank">Robert Blaker</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006441 -->
-<p><a href="/story/4541" target="_blank">Page 4541</a> - <strong><a href="http://homestuck.bandcamp.com/track/anbroids-v20" target="_blank">"Anbroids"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006441" target="_blank">Page 6441</a> - <strong><a href="http://homestuck.bandcamp.com/track/anbroids-v20" target="_blank">"Anbroids"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Vol. 9</a></p>
-<p>By <a href="http://dragonxvi.tumblr.com" target="_blank">Malcolm Brown</a></p>
+<p>By <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006472 -->
-<p><a href="/story/4572" target="_blank">Page 4572</a> - <strong><a href="http://homestuck.bandcamp.com/track/time-on-my-side" target="_blank">"Time on My Side"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006472" target="_blank">Page 6472</a> - <strong><a href="http://homestuck.bandcamp.com/track/time-on-my-side" target="_blank">"Time on My Side"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/strife" target="_blank">Strife!</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?1002797-Tensei" target="_blank">Joren "Tensei" de Bruin </a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006565 -->
-<p><a href="/story/4665" target="_blank">Page 4665</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006565" target="_blank">Page 6565</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/another-jungle" target="_blank">"Another Jungle"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Vol. 9</a></p>
-<p>By <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>By <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 <p>-</p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/a-taste-for-adventure" target="_blank">"A Taste for Adventure"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Vol. 9</a></p>
@@ -878,67 +850,58 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006715 -->
-<p><a href="/story/4815" target="_blank">Page 4815</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006715" target="_blank">Page 6715</a></p>
 <p>Weird moody horse shit by <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006720 -->
-<p><a href="/story/4820" target="_blank">Page 4820</a> - <strong><a href="http://homestuck.bandcamp.com/track/rain" target="_blank">"Rain"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006720" target="_blank">Page 6720</a> - <strong><a href="http://homestuck.bandcamp.com/track/rain" target="_blank">"Rain"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/medium" target="_blank">Medium</a></p>
 <p>By <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006725 -->
-<p><a href="/story/4825" target="_blank">Page 4825</a> - <strong><a href="http://homestuck.bandcamp.com/track/ruins-with-strings" target="_blank">"Ruins (With Strings)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006725" target="_blank">Page 6725</a> - <strong><a href="http://homestuck.bandcamp.com/track/ruins-with-strings" target="_blank">"Ruins (With Strings)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-5" target="_blank">Homestuck Vol. 5</a></p>
-<p>By <a href="http://jitmakesstuff.tumblr.com" target="_blank">Erik "Jit" Scheele</a> and <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>By <a href="http://jitmakesstuff.tumblr.com/" target="_blank">Erik "Jit" Scheele</a> and <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006727 -->
-<p><a href="/story/4827" target="_blank">Page 4827</a> - <strong><a href="http://homestuck.bandcamp.com/track/elevatorstuck" target="_blank">"Elevatorstuck"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006727" target="_blank">Page 6727</a> - <strong><a href="http://homestuck.bandcamp.com/track/elevatorstuck" target="_blank">"Elevatorstuck"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
 <p>"Homestuck Anthem" by <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?1002797-Tensei" target="_blank">Joren "Tensei" de Bruin</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006844 -->
-<p><a href="/story/4944" target="_blank">Page 4944</a> - <strong><a href="http://homestuck.bandcamp.com/track/im-a-member-of-the-midnight-crew-acapella" target="_blank">"I'm a Member of the Midnight Crew (Acapella)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006844" target="_blank">Page 6844</a> - <strong><a href="http://homestuck.bandcamp.com/track/im-a-member-of-the-midnight-crew-acapella" target="_blank">"I'm a Member of the Midnight Crew (Acapella)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Vol. 8</a></p>
 <p>Written by Eddie Morton</p>
 <p>Performed by <a href="http://www.mspaforums.com/member.php?55789-MightyMoose" target="_blank">David Ko</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 006927 -->
-<p><a href="/story/5027" target="_blank">Page 5027</a> - <strong><a href="http://homestuck.bandcamp.com/track/i-dont-want-to-miss-a-thing" target="_blank">"I Don't Want to Miss a Thing"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=006927" target="_blank">Page 6927</a> - <strong><a href="http://homestuck.bandcamp.com/track/i-dont-want-to-miss-a-thing" target="_blank">"I Don't Want to Miss a Thing"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
 <p>Written by Dianne Warren</p>
-<p>Performed by <a href="http://iambowman.com" target="_blank">Michael Guy Bowman</a></p>
+<p>Performed by <a href="http://iambowman.com/" target="_blank">Michael Guy Bowman</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 007138, 007152 -->
-<p><a href="/story/5238" target="_blank">Page 5238</a> and <a href="/story/5252" target="_blank">5252</a> - <strong><a href="http://homestuck.bandcamp.com/track/unite-synchronization" target="_blank">"Unite Synchronization"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007138" target="_blank">Page 7138</a> and <a href="http://www.mspaintadventures.com/?s=6&amp;p=007152" target="_blank">7152</a> - <strong><a href="http://homestuck.bandcamp.com/track/unite-synchronization" target="_blank">"Unite Synchronization"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Vol. 8</a></p>
 <p>Written by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 <div class="credit">
-<!-- Original MSPA page: 007161 -->
-<p><a href="/story/5261" target="_blank">Page 5261</a> - <strong>"Eternity Served Cold"</strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007161" target="_blank">Page 7161</a> - <strong>"Eternity Served Cold"</strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/cherubim" target="_blank">Cherubim</a></p>
 <p>Written by <a href="http://dragonxvi.tumblr.com/" target="_blank">Malcolm Brown</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 007163 -->
-<a href="/story/5263" target="_blank">Page 5263</a>
+<a href="http://www.mspaintadventures.com/?s=6&amp;p=007163" target="_blank">Page 7163</a>
 <p><strong><a href="http://homestuck.bandcamp.com/track/fuchsia-ruler" target="_blank">"Fuchsia Ruler"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/colours-and-mayhem-universe-a" target="_blank">coloUrs and mayhem: Universe A</a></p>
 <p>By Sinister Psyche</p>
@@ -966,8 +929,7 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 007208 -->
-<a href="/story/5308" target="_blank">Page 5308</a>
+<a href="http://www.mspaintadventures.com/?s=6&amp;p=007208" target="_blank">Page 7208</a>
 <p><strong><a href="http://homestuck.bandcamp.com/track/hate-you" target="_blank">"Hate You"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Volume 9</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby "Radiation" Fox</a></p>
@@ -1002,8 +964,7 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 007298 -->
-<a href="/story/5398" target="_blank">Page 5398</a>
+<a href="http://www.mspaintadventures.com/?s=6&amp;p=007298" target="_blank">Page 7298</a>
 <p><strong>"108 Stars of Density"</strong></p>
 <p>Not released on Bandcamp yet.</p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby "Radiation" Fox</a></p>
@@ -1041,24 +1002,21 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 007327 -->
-<p><a href="/story/5427" target="_blank">Page 5427</a> - <strong><a href="http://homestuck.bandcamp.com/track/killed-by-br8k-spider" target="_blank">"Killed by BR8K Spider​!​!​!​!​!​!​!​! "</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007327" target="_blank">Page 7327</a> - <strong><a href="http://homestuck.bandcamp.com/track/killed-by-br8k-spider" target="_blank">"Killed by BR8K Spider​!​!​!​!​!​!​!​! "</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">AlterniaBound</a></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 007338 -->
-<p><a href="/story/5438" target="_blank">Page 5438</a> - <strong><a href="http://homestuck.bandcamp.com/track/even-in-death-tmorras-belly-mix" target="_blank">"Even in Death (T'Morra's Belly Mix)"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007338" target="_blank">Page 7338</a> - <strong><a href="http://homestuck.bandcamp.com/track/even-in-death-tmorras-belly-mix" target="_blank">"Even in Death (T'Morra's Belly Mix)"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Volume 8</a></p>
 <p>By <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 007371 -->
-<p><a href="/story/5471" target="_blank">Page 5471</a>, 5472, 5473, 5474, 5485, 5494, 5495 - <strong><a href="http://homestuck.bandcamp.com/track/elevatorstuck" target="_blank">"Elevatorstuck"</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007371" target="_blank">Page 7371</a>, 7372, 7373, 7374, 7385, 7394, 7395 - <strong><a href="http://homestuck.bandcamp.com/track/elevatorstuck" target="_blank">"Elevatorstuck"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-6-heir-transparent" target="_blank">Homestuck Vol. 6: Heir Transparent</a></p>
 <p>"Homestuck Anthem" by <a href="http://plazmataz.tumblr.com/" target="_blank">Clark Powell</a></p>
 <p>Arranged by <a href="http://www.mspaforums.com/member.php?1002797-Tensei" target="_blank">Joren "Tensei" de Bruin</a></p>
@@ -1066,8 +1024,7 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 007412 -->
-<p><a href="/story/5512" target="_blank">Page 5512</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007412" target="_blank">Page 7412</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/a-taste-for-adventure" target="_blank">"A Taste for Adventure"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Vol. 9</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?56012-Beatfox" target="_blank">Seth "Beatfox" Peelle </a></p>
@@ -1075,8 +1032,7 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 007555 -->
-<p><a href="/story/5655" target="_blank">Page 5655</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007555" target="_blank">Page 7555</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/horschestra-strong-version" target="_blank">"Horschestra STRONG Version"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/alterniabound" target="_blank">Alterniabound</a></p>
 <p><a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
@@ -1084,23 +1040,20 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 007611 -->
-<p><a href="/story/5711" target="_blank">Page 5711</a> - <strong>"Trickster Mode"</strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=007611" target="_blank">Page 7611</a> - <strong>"Trickster Mode"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 007614 -->
-<p><a href="/story/5714" target="_blank">Page 5714</a> - <strong>"Kazoostuck"</strong></p>
+<p><a href="http://www.mspaintadventures.com/trickster.php?s=6&amp;p=007614" target="_blank">Page 7614</a> - <strong>"Kazoostuck"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 <p>Haunting kazoo refrain by <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 008131 -->
-<p><a href="/story/6231" target="_blank">Page 6231</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=008131" target="_blank">Page 8131</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/a-taste-for-adventure" target="_blank">"A Taste for Adventure"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Vol. 9</a></p>
 <p>By <a href="http://www.mspaforums.com/member.php?56012-Beatfox" target="_blank">Seth "Beatfox" Peelle </a></p>
@@ -1108,15 +1061,13 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 008143 -->
-<p><a href="/story/6243" target="_blank">Page 6243</a> - <strong>"Homosuck Anthem"</strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=008143" target="_blank">Page 8143</a> - <strong>"Homosuck Anthem"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 008178 -->
-<p><a href="/story/6278" target="_blank">Page 6278</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=008178" target="_blank">Page 8178</a></p>
 <p><strong><a href="http://homestuck.bandcamp.com/track/gold-pilot" target="_blank">"Gold Pilot"</a></strong></p>
 <p>Available on Bandcamp in <a href="http://homestuck.bandcamp.com/album/colours-and-mayhem-universe-a" target="_blank">coloUrs and mayhem: Universe A</a></p>
 <p>By First Turn Fold </p>
@@ -1125,8 +1076,7 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 008801 -->
-<p><a href="/story/6901" target="_blank">Page 6901</a></p>
+<p><a href="http://www.mspaintadventures.com/ACT6ACT6.php?s=6&amp;p=008801" target="_blank">Page 8801</a></p>
 <p><strong><a href="https://homestuck.bandcamp.com/track/carne-vale" target="_blank">"Carne Vale"</a></strong></p>
 <p>Available on Bandcamp in <a href="https://homestuck.bandcamp.com/album/cherubim" target="_blank">Cherubim</a></p>
 <p>By Malcolm Brown </p>
@@ -1134,8 +1084,7 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 008998 -->
-<p><a href="/story/7098" target="_blank">Page 7098</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=008998" target="_blank">Page 8998</a></p>
 <p><strong><a href="https://homestuck.bandcamp.com/track/pipeorgankind" target="_blank">"Pipeorgankind"</a></strong></p>
 <p>Available on Bandcamp in <a href="https://homestuck.bandcamp.com/album/colours-and-mayhem-universe-b" target="_blank">coloUrs and mayhem: Universe B</a></p>
 <p>By <a href="http://soselfimportant.tumblr.com/" target="_blank">James Roach</a> </p>
@@ -1143,54 +1092,47 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 009001 -->
-<p><a href="/story/7101" target="_blank">Page 7101</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009001" target="_blank">Page 9001</a></p>
 <p><strong>"Elevatorstuck, with Meows"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 009305 -->
-<p><a href="/story/7405" target="_blank">Page 7405</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009305" target="_blank">Page 9305</a></p>
 <p>Not a creature was stirring by <a href="http://captainpunish.tumblr.com/" target="_blank">Alexander Rosetti</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 009309 -->
-<p><a href="/story/7409" target="_blank">Page 7409</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009309" target="_blank">Page 9309</a></p>
 <p><strong>"Homosuck Swan Song"</strong></p>
 <p>By <a href="http://tobyfox.net/" target="_blank">Toby Radiation Fox</a></p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 009348 -->
-<p><a href="/story/7448" target="_blank">Page 7448</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009348" target="_blank">Page 9348</a></p>
 <p><strong>"Hello Zepp"</strong></p> - Saw theme, by Charlie Clouser
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 009349 -->
-<p><a href="/story/7449" target="_blank">Page 7449</a> - <strong><a href="https://homestuck.bandcamp.com/track/moonsetter" target="_blank">"Moonsetter "</a></strong></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009349" target="_blank">Page 9349</a> - <strong><a href="https://homestuck.bandcamp.com/track/moonsetter" target="_blank">"Moonsetter "</a></strong></p>
 <p>Available on Bandcamp in <a href="https://homestuck.bandcamp.com/album/homestuck-vol-9" target="_blank">Homestuck Volume 9</a></p>
 <p>By Toby Radiation Fox featuring Samm Neiland on viola and Clark Powell on cello </p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 009828 -->
-<p><a href="/story/7928" target="_blank">Page 7928</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009828" target="_blank">Page 9828</a></p>
 <p>"Horsecatska"</p>
 <p>By <a href="http://soselfimportant.tumblr.com/" target="_blank">James Roach</a> </p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 009859 -->
-<p><a href="/story/7959" target="_blank">Page 7959</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009859" target="_blank">Page 9859</a></p>
 <p><strong><a href="https://homestuck.bandcamp.com/track/do-you-remem8er-me" target="_blank">"Do You Remem8er Me"</a></strong></p>
 <p>Available on Bandcamp in <a href="https://homestuck.bandcamp.com/album/homestuck-vol-8" target="_blank">Homestuck Volume 8</a></p>
 <p>By Malcolm Brown </p>
@@ -1199,16 +1141,14 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <div class="credit">
-<!-- Original MSPA page: 009987 -->
-<p><a href="/story/8087">Page 8087</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=009987">Page 9987</a></p>
 <p><strong><a href="https://homestuck.bandcamp.com/album/s-collide" target="_blank">"Collide"</a></strong></p>
 <p>By Seth Peelle, Toby Fox, Malcolm Brown, Joren De Bruin </p>
 </div>
 
 
 <div class="credit">
-<!-- Original MSPA page: 010027 -->
-<p><a href="/story/8127">Page 8127</a></p>
+<p><a href="http://www.mspaintadventures.com/?s=6&amp;p=010027">Page 10027</a></p>
 <p><strong><a href="https://homestuck.bandcamp.com/album/act-7" target="_blank">"Overture"</a></strong></p>
 <p>By Clark Powell, Toby Fox </p>
 </div>
@@ -1217,30 +1157,10 @@ Glitch effects by <a href="http://tobyfox.net/" target="_blank">Toby Radiation F
 
 
 <p class="explain">All music is the property of the respective artists listed above, and is used in MSPA with their permission.</p>
-</div>
+			</div>
+		<br>
+		</div>
+	<br>
+	</div>
 
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    </div>
-    <div class="o_home o_site-footer row pos-r pad-t-lg pad-t-xl--md pad-x-xl--md">
-  <div class="mar-x-xl--sm mar-x-xxl--md pad-y-md bg-white top-rounded">
-    <div class="type-center">
-      <ul>
-        <li><a href="/contacts">Contacts</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
-      </ul>
-      <div><span style="white-space:nowrap;">&copy;2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-    </div>
-  </div>
-</div>
-
-
-    <div id="overlay"      data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
-  </body>
-</html>
+</body></html>
