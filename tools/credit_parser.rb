@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'English'
-require 'yaml'
+require 'json'
 
 class SongRecord
   attr_accessor :page, :page_link, :page_title
@@ -39,7 +39,7 @@ class CreditParser
   TITLE = /\"(?<title>[^\"]+)\"/
 
   def get_info_for_file
-    sound_credits = File.open('soundcredits.html') { |f| Nokogiri::HTML(f) }
+    sound_credits = File.open(__dir__ + '/soundcredits.html') { |f| Nokogiri::HTML(f) }
 
     sound_credits.css('.credit').map do |credit|
       elems = credit.elements
