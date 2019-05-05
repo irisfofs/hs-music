@@ -112,8 +112,8 @@ function d3stuff() {
   const tip = d3Tip()
                   .attr('class', 'd3-tip cover-tooltip')
                   .offset([-10, 0])
-                  .html((d) => (`<p>${d.title} - ${d.artist}</p>
-<p>${d.page_title}</p>`));
+                  .html((d: Track) => (`<p>${d.title} - ${d.artist}</p>
+<p>${d.pageTitle}</p>`));
 
   cover_group.call(tip);
 

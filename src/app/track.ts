@@ -25,14 +25,14 @@ export class Track implements D3Item {
   baseY?: number;
 
   constructor(trackJson: {
+    page_link: string,
+    album: string,
+    album_link: string,
+    artist: string,
+    artist_link: string,
     page?: string,
     title?: string,
     track_link?: string,
-              page_link: string,
-              album: string,
-              album_link: string,
-              artist: string,
-              artist_link: string,
     page_title?: string,
   }) {
     this.page = Number(trackJson.page);
@@ -44,6 +44,5 @@ export class Track implements D3Item {
     this.artist = trackJson.artist;
     this.artistLink = trackJson.artist_link;
     this.pageTitle = trackJson.page_title;
-    this.title = trackJson.title;
   }
 }
