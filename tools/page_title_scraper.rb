@@ -6,7 +6,12 @@ class PageTitleScraper
   PAGE_TITLE_SELECTOR = 'h2.type-hs-header'
 
   def self.scrape(track_list)
-    track_list.select(&:page_link).each { |t| scrape_title(t) }
+    tracks_with_pagelinks = track_list.select(&:page_link)
+    tracks_with_pagelinks.each_with_index { |t, i|
+      scrape_title(t)
+      printf("\rScraping titles: %d of %d", i + 1, tracks_with_pagelinks.length)
+    }
+    puts
   end
 
   def self.scrape_title(track)
