@@ -7,6 +7,7 @@ class SongRecord
   attr_accessor :title, :track_link
   attr_accessor :album_link, :album
   attr_accessor :artist, :artist_link
+  attr_accessor :long_artist
 
   # http://stackoverflow.com/questions/4464050/ruby-objects-and-json-serialization-without-rails
   def to_json(options = {})
@@ -25,9 +26,23 @@ class CreditParser
     info_of_a(element)
   end
 
-  def extract_artist_link(element)
-    return nil unless element && element.text =~ /^By /
-    info_of_a(element)
+  # Primary artist credit:
+  # "Remix by"
+  # "Arrangement by"
+  # "Arranged by"
+  OTHER_PRIMARY = /(?:(?:Remix|Arrangement|Arranged) by)/
+  PRIMARY_ARTIST = /(?:By|#{OTHER_PRIMARY}) (?<artist>.+)/
+
+  def extract_artist_info(element, record)
+    return nil unless element
+
+    if element.text =~ PRIMARY_ARTIST
+      puts "Already has artist #{rec}" if record.artist
+      record.artist = $LAST_MATCH_INFO[:artist]
+    elsif element.text =~ / by /
+      record.long_artist ||= []
+      record.long_artist.push(element.text)
+    end
   end
 
   def info_of_a(element)
@@ -69,8 +84,9 @@ class CreditParser
       # grab link to bandcamp track from title if it's there
 
       # extract link to bandcamp
-      rec.album, rec.album_link = (1..2).reduce(nil) { |a, e| a || extract_bandcamp_link(elems[e]) }
-      rec.artist, rec.artist_link = (1..3).reduce(nil) { |a, e| a || extract_artist_link(elems[e]) }
+      rec.album, rec.album_link = elems[1..2].reduce(nil) { |a, e| a || extract_bandcamp_link(e) }
+
+      elems[1..3].each { |e| extract_artist_info(e, rec) }
 
       rec
     end
