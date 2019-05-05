@@ -10,7 +10,7 @@ data_filename = __dir__ + '/../src/assets/data.json'
 
 exit unless File.exist? data_filename
 
-tracks = File.open(data_filename, 'r') { |f| JSON.load(f) }
+tracks = JSON.parse(File.read(data_filename, :encoding => 'utf-8'), :symbolize_names => true)
 
 CreditParser.new.reparse_file(tracks)
 

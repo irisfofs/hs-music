@@ -18,11 +18,10 @@ class CreditParser
     return nil unless element
 
     if element.text =~ PRIMARY_ARTIST
-      puts "Already has artist #{rec}" if record[:artist]
       record[:artist] = $LAST_MATCH_INFO[:artist]
     elsif element.text =~ / by /
       record[:long_artist] ||= []
-      record[:long_artist].push(element.text)
+      record[:long_artist].push(element.text) unless record[:long_artist].include?(element.text)
     end
   end
 
@@ -35,7 +34,8 @@ class CreditParser
   TITLE = /\"(?<title>[^\"]+)\"/
 
   def load_credits_file
-    File.open(__dir__ + '/soundcredits.html') { |f| Nokogiri::HTML(f) }
+    credit_file = File.read(__dir__ + '/soundcredits.html', :encoding => 'utf-8')
+    Nokogiri::HTML(credit_file)
   end
 
   def get_info_for_file
@@ -53,9 +53,9 @@ class CreditParser
     sound_credits.css('.credit').map do |credit|
       rec = parse_page_and_title(credit)
 
-      return nil unless rec
+      next nil unless rec
 
-      track = tracks.find { |t| t[:page] == rec[:page] }
+      track = tracks.find { |t| "#{t[:page]}" == rec[:page] }
       parse_credit_entry(track, credit)
     end.compact
   end
