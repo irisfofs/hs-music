@@ -18,16 +18,16 @@ const data: Track[] = rawData.map((raw) => new Track(raw));
 
 // these should go somewhere better than just... sitting here ugh
 const width = 1920;
-const height = 1000;
-const cover_size = 60;
-const border_size = 1;
-const spacing = 5;
+const HEIGHT = 1000;
+const COVER_SIZE = 60;
+const BORDER_SIZE = 1;
+const SPACING = 5;
 
-const first_page = 1;
+const FIRST_PAGE = 1;
 // Chosen somewhat arbitrarily.
 // const last_page = 8130;
-const last_page = 4109;
-const page_span = last_page - first_page;
+const LAST_PAGE = 4109;
+const PAGE_SPAN = LAST_PAGE - FIRST_PAGE;
 
 @Component({
   selector: 'hs-timeline',
@@ -56,7 +56,7 @@ const HS_GREEN = '#168500';
 const HS_GRAY = '#C6C6C6';
 
 function d3stuff() {
-  const chart = d3.select('#chart').attr('width', width).attr('height', height);
+  const chart = d3.select('#chart').attr('width', width).attr('height', HEIGHT);
 
   // ooo you should have a slick AF animation of it drawing the act line
 
@@ -66,8 +66,8 @@ function d3stuff() {
   drawActs(act_line);
 
   // Really feeling like I should call a helper method with side 1, then side 2.
-  const tracker1 = new HeightTracker(cover_size + spacing);
-  const tracker2 = new HeightTracker(cover_size + spacing);
+  const tracker1 = new HeightTracker(COVER_SIZE + SPACING);
+  const tracker2 = new HeightTracker(COVER_SIZE + SPACING);
 
   const side1End = landmarks.side1[landmarks.side1.length - 1].page;
   const side1Covers = [];
@@ -82,14 +82,14 @@ function d3stuff() {
 
   side1Covers.forEach((d: Track&D3Item) => {
     d.x = pageNumToX(d.page, landmarks.side1);
-    d.baseY = height / 4;
-    d.y = d.baseY + (cover_size + spacing) * tracker1.getHeight(d);
+    d.baseY = HEIGHT / 4;
+    d.y = d.baseY + (COVER_SIZE + SPACING) * tracker1.getHeight(d);
   });
 
   side2Covers.forEach((d: Track&D3Item) => {
     d.x = pageNumToX(d.page, landmarks.side2);
-    d.baseY = 3 * height / 4;
-    d.y = d.baseY + (cover_size + spacing) * tracker2.getHeight(d);
+    d.baseY = 3 * HEIGHT / 4;
+    d.y = d.baseY + (COVER_SIZE + SPACING) * tracker2.getHeight(d);
   });
 
   const fraction_of_comic = (page_count) =>
@@ -111,7 +111,7 @@ function d3stuff() {
       .ease(d3.easeCubic)  // cubic-in
       .delay(
           (d) => total_rollout / 2 +
-              fraction_of_comic(d.page - first_page) * total_rollout)
+              fraction_of_comic(d.page - FIRST_PAGE) * total_rollout)
       .attr('y1', (d) => d.y);
 
   const tip = d3Tip()
@@ -130,7 +130,7 @@ function d3stuff() {
           .attr(
               'transform',
               (d) =>
-                  `translate(${d.x - cover_size / 2}, ${d.y - cover_size / 2})`)
+                  `translate(${d.x - COVER_SIZE / 2}, ${d.y - COVER_SIZE / 2})`)
           .style('opacity', 0);
 
   covers.on('mouseover', tip.show).on('mouseout', tip.hide);
@@ -140,25 +140,25 @@ function d3stuff() {
       .ease(d3.easeCubic)  // cubic-out
       .delay(
           (d) => 500 + total_rollout / 2 +
-              fraction_of_comic(d.page - first_page) * total_rollout)
+              fraction_of_comic(d.page - FIRST_PAGE) * total_rollout)
       .style('opacity', 1);
 
   // put it behind the image so the border peeks out from behind
   covers.append('rect')
-      .attr('width', cover_size)
-      .attr('height', cover_size)
+      .attr('width', COVER_SIZE)
+      .attr('height', COVER_SIZE)
       .attr('stroke', 'black')
-      .attr('stroke-width', border_size)
+      .attr('stroke-width', BORDER_SIZE)
       .attr('fill', 'black');
 
   covers.append('image')
       .attr('xlink:href', (d) => `/assets/covers/${cover_filename(d)}`)
-      .attr('width', cover_size)
-      .attr('height', cover_size);
+      .attr('width', COVER_SIZE)
+      .attr('height', COVER_SIZE);
 }
 
 function drawActs(chart) {
-  const height_midpoint = height / 2;
+  const height_midpoint = HEIGHT / 2;
 
   // why am I not just using this to begin with...?
   const combined_data = landmarks.side1;
@@ -190,7 +190,7 @@ function drawActs(chart) {
           // TODO: write functions to clear up these computations
           // like until_act_line_passed or something...
           .duration((d) => fraction_of_comic(d.length) * total_rollout)
-          .delay((d) => fraction_of_comic(d.page - first_page) * total_rollout)
+          .delay((d) => fraction_of_comic(d.page - FIRST_PAGE) * total_rollout)
           .attr('x2', (d) => page_num_to_x(d.page + d.length));
 
   const tip =
@@ -243,8 +243,8 @@ function page_num_to_x(page: number) {
   const width_padding = 200;
 
   const usable_width = width - width_padding;
-  const homestuck_page_count = (page || 0) - first_page;
-  return homestuck_page_count / page_span * usable_width + width_padding / 2;
+  const homestuck_page_count = (page || 0) - FIRST_PAGE;
+  return homestuck_page_count / PAGE_SPAN * usable_width + width_padding / 2;
 }
 
 function pageNumToX(page: number, side: ComicEvent[]) {
