@@ -1,7 +1,26 @@
+.universe-outline {
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	border: 7px solid;
+	box-sizing: border-box;
+}
+
+.universe-outline.alpha {
+	top: 50%;
+}
+
+.alpha {
+	border-color: #e00707
+}
+
+.beta {
+	border-color: #4ac925;
+}
+
 svg {
   margin: 0;
   padding: 0;
-  background: #EFEFEF;
 }
 
 .cover-tooltip {

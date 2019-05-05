@@ -11,8 +11,8 @@ import {D3Item, Track} from './track';
 const data: Track[] = rawData.map((raw) => new Track(raw));
 
 // these should go somewhere better than just... sitting here ugh
-const width = 1920;
-const HEIGHT = 1000;
+const width = window.innerWidth;
+const HEIGHT = window.innerHeight;
 const COVER_SIZE = 60;
 const BORDER_SIZE = 1;
 const SPACING = 5;
