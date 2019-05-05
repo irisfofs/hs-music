@@ -2,3 +2,4 @@ covers/
 node_modules/
 dist/
 Gemfile.lock
+package-lock.json
