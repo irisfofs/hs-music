@@ -129,73 +129,73 @@ export const landmarks: {side1: ComicEvent[], side2: ComicEvent[]} = {
     {
       title: 'Act 6 Act 6',
       page: 6243,
-      subtitle: '',
+      subtitle: 'HOMOSUCK',
       color: HS_GREEN,
     },
     {
       title: 'Act 6 Act 6 Intermission 1',
       page: 6278,
-      subtitle: '',
+      subtitle: 'Stardust',
       color: HS_GRAY
     },
     {
       title: 'Act 6 Act 6 Act 2',
       page: 6475,
-      subtitle: '',
+      subtitle: 'LOSHIT',
       color: HS_GREEN,
     },
     {
       title: 'Act 6 Act 6 Intermission 2',
       page: 6531,
-      subtitle: '',
+      subtitle: 'theres problems',
       color: HS_GRAY
     },
     {
       title: 'Act 6 Act 6 Act 3',
       page: 6853,
-      subtitle: '',
+      subtitle: 'GOD\'S GIFT TO THE YAOIS',
       color: HS_GREEN,
     },
     {
       title: 'Act 6 Act 6 Intermission 3',
       page: 6901,
-      subtitle: '',
+      subtitle: 'GAME OVER',
       color: HS_GRAY
     },
     {
       title: 'Act 6 Act 6 Act 4',
       page: 6921,
-      subtitle: '',
+      subtitle: 'DARK NIGHT OF THE FEELINGS',
       color: HS_GREEN,
     },
     {
       title: 'Act 6 Act 6 Intermission 4',
       page: 6944,
-      subtitle: '',
+      subtitle: 'F1X TH1S',
       color: HS_GRAY
     },
     {
       title: 'Act 6 Act 6 Act 5',
       page: 7409,
-      subtitle: '',
+      subtitle: 'MASTERPIECE',
       color: HS_GREEN,
     },
     {
       title: 'Act 6 Act 6 Intermission 5',
       page: 7449,
-      subtitle: '',
+      subtitle: 'She\'s 8ack',
       color: HS_GRAY
     },
     {
       title: 'EOA6',
       page: 8087,
       subtitle: 'Collide.',
-      color: HS_GREEN,
+      color: 'black',
     },
     {
       title: 'Act 7',
       page: 8127,
-      subtitle: '',
+      subtitle: 'The Rapture',
       color: 'white',
     },
   ],
