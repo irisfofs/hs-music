@@ -65,7 +65,7 @@ class CreditParser
     elems = credit_el.elements
 
     if elems[0].text =~ /#{PAGE}\s*-\s*#{TITLE}/
-      rec[:page] = $LAST_MATCH_INFO[:page]
+      rec[:page] = Integer($LAST_MATCH_INFO[:page], 10)
       rec[:title] = $LAST_MATCH_INFO[:title]
 
       track_link = elems[0].css('a')[1]

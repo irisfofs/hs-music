@@ -18,7 +18,8 @@ data_filename = __dir__ + '/../src/assets/data.json'
 if File.exist? data_filename
   old_tracks = JSON.parse(File.read(data_filename, :encoding => 'utf-8'), :symbolize_names => true)
   old_tracks.each do |ot|
-    tracks.find { |t| t[:page] == ot[:page] }[:page_title] = ot[:page_title]
+    matched_track = tracks.find { |t| t[:page] == ot[:page] }
+    matched_track[:page_title] = ot[:page_title] if matched_track
   end
 end
 
@@ -27,7 +28,7 @@ additions = JSON.parse(additions_file, :symbolize_names => true)
 
 additions.each do |a|
   track = tracks.find { |t| t[:page] == a[:page] }
-  a.each_pair { |k, v| track[k] = v }
+  a.each_pair { |k, v| track[k] = v } if track
 end
 
 cover_art_scraper.scrape(tracks)
