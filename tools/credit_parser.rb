@@ -26,7 +26,7 @@ class CreditParser
   end
 
   def info_of_a(element)
-    a = element.at_css('a')
+    a = element.name == 'a' ? element : element.at_css('a')
     [a.text, a.attr(:href)] if a
   end
 
@@ -71,7 +71,7 @@ class CreditParser
       track_link = elems[0].css('a')[1]
       rec[:track_link] = track_link.attr(:href) if track_link
     elsif elems[0].text =~ PAGE
-      rec[:page] = $LAST_MATCH_INFO[:page]
+      rec[:page] = Integer($LAST_MATCH_INFO[:page], 10)
       if elems[1].text =~ TITLE
         rec[:title] = $LAST_MATCH_INFO[:title]
         rec[:track_link] = (info_of_a(elems[1]) || [nil, nil])[1]
@@ -84,21 +84,23 @@ class CreditParser
       return nil
     end
 
+    rec[:page_link] = info_of_a(elems[0])&.[](1)
     rec
   end
 
   def parse_credit_entry(rec, credit_el)
     elems = credit_el.elements
 
-    # grab link to page
-    rec[:page_link] = (info_of_a(elems[0]) || [nil, nil])[1]
-
     # grab link to bandcamp track from title if it's there
 
     # extract link to bandcamp
     rec[:album], rec[:album_link] = elems[1..2].reduce(nil) { |a, e| a || extract_bandcamp_link(e) }
 
-    elems[1..3].each { |e| extract_artist_info(e, rec) }
+    elems[1..-1].each do |e|
+      # If we run into one of the multiple-song credit sections, don't grab the wrong artist.
+      break if e.text =~ PAGE
+      extract_artist_info(e, rec)
+    end
 
     rec
   end
