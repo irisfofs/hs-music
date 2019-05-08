@@ -146,7 +146,7 @@ function d3stuff() {
       .attr('fill', 'black');
 
   covers.append('image')
-      .attr('xlink:href', (d) => `/assets/covers/${cover_filename(d)}`)
+      .attr('xlink:href', (d) => `assets/covers/${cover_filename(d)}`)
       .attr('width', COVER_SIZE)
       .attr('height', COVER_SIZE);
 }
