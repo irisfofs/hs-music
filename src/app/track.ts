@@ -13,8 +13,8 @@ export class Track implements D3Item {
   pageLink: string;
   album: string;
   albumLink: string;
-  artist: string;
-  artistLink: string;
+  artist?: string;
+  artistLink?: string;
   pageTitle: string;
 
   heightLevel: number = 0;
@@ -28,14 +28,14 @@ export class Track implements D3Item {
     page_link: string,
     album: string,
     album_link: string,
-    artist: string,
-    artist_link: string,
-    page?: string,
+    artist?: string,
+    artist_link?: string,
+    page: number,
     title?: string,
     track_link?: string,
     page_title?: string,
   }) {
-    this.page = Number(trackJson.page);
+    this.page = trackJson.page;
     this.title = trackJson.title;
     this.trackLink = trackJson.track_link;
     this.pageLink = trackJson.page_link;

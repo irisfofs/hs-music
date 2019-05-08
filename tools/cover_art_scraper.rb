@@ -6,7 +6,7 @@ class CoverArtScraper
   COVER_IMG_SELECTOR = '.popupImage'
 
   def scrape(track_list)
-    cover_dir = "#{__dir__}/../src/covers"
+    cover_dir = "#{__dir__}/../src/assets/covers"
     Dir.mkdir(cover_dir) unless File.exist? cover_dir
 
     tracks_with_links = track_list.select { |t| t[:track_link] }
