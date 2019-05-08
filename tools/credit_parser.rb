@@ -27,7 +27,7 @@ class CreditParser
 
   def info_of_a(element)
     a = element.name == 'a' ? element : element.at_css('a')
-    [a.text, a.attr(:href)] if a
+    a ? [a.text, a.attr(:href)] : [nil, nil]
   end
 
   PAGE = /Page (?<page>\d+)/
@@ -74,7 +74,7 @@ class CreditParser
       rec[:page] = Integer($LAST_MATCH_INFO[:page], 10)
       if elems[1].text =~ TITLE
         rec[:title] = $LAST_MATCH_INFO[:title]
-        rec[:track_link] = (info_of_a(elems[1]) || [nil, nil])[1]
+        rec[:track_link] = info_of_a(elems[1])[1]
       else
         puts "no match for element: #{elems.map(&:text)}"
         return nil
@@ -84,7 +84,7 @@ class CreditParser
       return nil
     end
 
-    rec[:page_link] = info_of_a(elems[0])&.[](1)
+    rec[:page_link] = info_of_a(elems[0])[1]
     rec
   end
 
