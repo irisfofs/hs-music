@@ -1,4 +1,5 @@
 import {D3Item, Track} from './track';
+import Rect from 'goog:goog.math.Rect';
 
 export class HeightTracker {
   items = [];
@@ -9,6 +10,37 @@ export class HeightTracker {
     this.itemWidth = itemWidth;
   }
 
+  testHeight2(x: number) {
+    // Check the "6" heights... maybe make this agnostic of height levels? 
+    
+    const insert_at = this.binarySearch(x, 0, this.items.length - 1);
+
+    // Find first available height at that point. Maybe we could even store
+    // this in a data structure rather than finding it each time.
+
+    // Traverse left.
+    let firstAvailableHeight = 0; // TODO: What is good start?
+    for (let i = insert_at - 1; i >= 0 && i < this.items.length; i--) {
+      const item = this.items[i];
+      // TODO: Access itemWidth of x and the item in question.
+      if (x - item.displayX > this.itemWidth) {
+        // Oh no... if items can vary in size (and offset?) then this won't be
+        // reliable.
+        break;
+      }
+      firstAvailableHeight = Math.max(firstAvailableHeight, item.y)
+    }
+
+    for (let i = insert_at; i >= 0 && i < this.items.length; i++) {
+      const item = this.items[i];
+      if (item.displayX - x > this.itemWidth) {
+        break;
+      }
+      blocked_heights.add(item.heightLevel);
+    }
+
+  }
+	
   testHeight(x: number): {index: number, height: number} {
     // binary search
     const insert_at = this.binarySearch(x, 0, this.items.length - 1);
@@ -47,11 +79,7 @@ export class HeightTracker {
 
   addTrack(track: Track): number {
     const testXs = [
-      track.x - this.itemWidth * .4,
-      track.x - this.itemWidth * .3,
       track.x,
-      track.x + this.itemWidth * .3,
-      track.x + this.itemWidth * .4,
     ];
 
     let best = Number.POSITIVE_INFINITY;

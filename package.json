@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "precommit": "check-clang-format"
   },
   "private": true,
   "dependencies": {
@@ -19,9 +20,11 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "closure-library.ts": "^1.0.0",
     "core-js": "^2.5.4",
     "d3": "^5.9.2",
     "d3-tip": "^0.9.1",
+    "google-closure-library": "^20190415.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
@@ -35,7 +38,9 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "clang-format": "^1.2.4",
     "codelyzer": "~4.5.0",
+    "husky": "^2.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
