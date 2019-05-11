@@ -1,12 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as d3 from 'd3';
 import d3Tip from 'd3-tip';
 
-import rawData from '../assets/data.json';
-import {ComicEvent, landmarks} from '../data/act_information';
-
-import {HeightTracker} from './height_tracker';
-import {D3Item, Track} from './track';
+import rawData from '../../assets/data.json';
+import {ComicEvent, landmarks} from '../../data/act_information';
+import {HeightTracker} from '../height_tracker';
+import {D3Item, Track} from '../track';
 
 const data: Track[] = rawData.map((raw) => new Track(raw));
 
@@ -27,7 +26,7 @@ const PAGE_SPAN = LAST_PAGE - FIRST_PAGE;
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css']
 })
-export class TimelineComponent {
+export class TimelineComponent implements OnInit {
   ngOnInit() {
     console.log(data);
     d3stuff();
