@@ -20,9 +20,5 @@
       "es2018",
       "dom"
     ],
-    "paths": {
-      "goog:*": ["./node_modules/closure-library.d.ts/index.d.ts"]
-    },
-    "skipLibCheck": true
   }
 }

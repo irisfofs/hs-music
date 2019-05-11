@@ -1,4 +1,3 @@
-import Rect from 'goog:goog.math.Rect';
 
 import {D3Item, Track} from './track';
 
@@ -15,9 +14,10 @@ export class HeightTracker {
 
   testHeight2(track: Track) {
     // Get the cover size from the track.
-    const coverSize = track.coverSize;
+    // const coverSize = track.coverSize;
 
-
+    // const rect = Rect.createFromPositionAndSize(new Coordinate(0, 0),
+    // coverSize);
 
     // Find first available height at that point. Maybe we could even store
     // this in a data structure rather than finding it each time.
@@ -30,9 +30,9 @@ export class HeightTracker {
 
     let firstAvailableHeight = 0;  // TODO: What is a good start?
     for (const t of this.tracks) {
-      if (track.rect.intersects(t.rect)) {
-        firstAvailableHeight = Math.max(firstAvailableHeight, t.y)
-      }
+      // if (track.rect.intersects(t.rect)) {
+      //   firstAvailableHeight = Math.max(firstAvailableHeight, t.y)
+      // }
     }
   }
 

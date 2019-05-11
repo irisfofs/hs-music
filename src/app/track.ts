@@ -1,5 +1,3 @@
-import Rect from 'goog:goog.math.Rect';
-import Size from 'goog:goog.math.Size';
 
 // TODO: Look if this exists in d3 code.
 export interface D3Item {
@@ -22,8 +20,8 @@ export class Track implements D3Item {
 
   heightLevel: number = 0;
 
-  rect?: Rect;
-  coverSize?: Size;
+  // rect?: Rect;
+  // coverSize?: Size;
 
   x?: number;
   displayX?: number;
