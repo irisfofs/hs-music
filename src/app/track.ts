@@ -1,3 +1,4 @@
+import {Rect} from './rect';
 
 // TODO: Look if this exists in d3 code.
 export interface D3Item {
@@ -20,7 +21,7 @@ export class Track implements D3Item {
 
   heightLevel: number = 0;
 
-  // rect?: Rect;
+  rect?: Rect;
   // coverSize?: Size;
 
   x?: number;

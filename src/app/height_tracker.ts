@@ -1,4 +1,4 @@
-
+import {Rect} from './rect';
 import {D3Item, Track} from './track';
 
 export class HeightTracker {
