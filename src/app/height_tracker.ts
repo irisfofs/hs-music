@@ -13,8 +13,11 @@ export class HeightTracker {
     this.itemWidth = itemWidth;
   }
 
-  testHeight2(t: Track) {
-    // Check the "6" heights... maybe make this agnostic of height levels?
+  testHeight2(track: Track) {
+    // Get the cover size from the track.
+    const coverSize = track.coverSize;
+
+
 
     // Find first available height at that point. Maybe we could even store
     // this in a data structure rather than finding it each time.
@@ -26,9 +29,9 @@ export class HeightTracker {
     // conflicts whenever we update it?
 
     let firstAvailableHeight = 0;  // TODO: What is a good start?
-    for (const track of this.tracks) {
-      if (t.rect.intersects(track.rect)) {
-        firstAvailableHeight = Math.max(firstAvailableHeight, item.y)
+    for (const t of this.tracks) {
+      if (track.rect.intersects(t.rect)) {
+        firstAvailableHeight = Math.max(firstAvailableHeight, t.y)
       }
     }
   }

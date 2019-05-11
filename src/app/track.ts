@@ -1,3 +1,6 @@
+import Rect from 'goog:goog.math.Rect';
+import Size from 'goog:goog.math.Size';
+
 // TODO: Look if this exists in d3 code.
 export interface D3Item {
   x?: number;
@@ -19,6 +22,9 @@ export class Track implements D3Item {
 
   heightLevel: number = 0;
 
+  rect?: Rect;
+  coverSize?: Size;
+
   x?: number;
   displayX?: number;
   y?: number;
@@ -29,8 +35,7 @@ export class Track implements D3Item {
     album: string,
     album_link: string,
     artist?: string,
-    artist_link?: string,
-    page: number,
+    artist_link?: string, page: number,
     title?: string,
     track_link?: string,
     page_title?: string,

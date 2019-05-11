@@ -19,10 +19,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
-  },
-  "baseUrl": "./",
-  "paths": {
-        "goog:*": ["./node_modules/closure-library.d.ts/index.d.ts"]
+    ],
+    "paths": {
+      "goog:*": ["./node_modules/closure-library.d.ts/index.d.ts"]
+    },
+    "skipLibCheck": true
   }
 }
