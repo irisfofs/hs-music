@@ -5,15 +5,15 @@ import {AppComponent} from './app.component';
 import {TimelineComponent} from './timeline.component';
 
 @NgModule({
-  declarations : [
+  declarations: [
     AppComponent,
     TimelineComponent,
   ],
-  imports : [
+  imports: [
     BrowserModule,
   ],
-  providers : [],
-  bootstrap : [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
