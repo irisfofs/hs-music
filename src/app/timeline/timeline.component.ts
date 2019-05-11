@@ -124,6 +124,7 @@ function d3stuff(dialog: MatDialog) {
                      .data(data)
                      .enter()
                      .append('g')
+                     .classed('cover', true)
                      .attr(
                          'transform',
                          (d) => `translate(${d.displayX - COVER_SIZE / 2}, ${
