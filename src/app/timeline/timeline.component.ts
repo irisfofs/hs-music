@@ -151,7 +151,7 @@ function d3stuff(dialog: MatDialog) {
       .attr('fill', 'black');
 
   covers.append('image')
-      .attr('xlink:href', (d) => `assets/covers/${cover_filename(d)}`)
+      .attr('xlink:href', (d) => d.coverLink)
       .attr('width', COVER_SIZE)
       .attr('height', COVER_SIZE);
 }
@@ -254,17 +254,4 @@ function pageNumToX(page: number, side: ComicEvent[]) {
 
   const pageCountInSide = page - sideStart;
   return pageCountInSide / sidePageCount * usable_width + width_padding / 2;
-}
-
-function cover_filename(track: Track) {
-  if (track.title) {
-    const fn =
-        track.title.toLowerCase().replace(/ /g, '_').replace(/[^\w-]/g, '');
-    const final = `cover_${fn}.jpg`;
-    console.log(final);
-    return final;
-  }
-  // TODO: return some generic cover page
-  // also learn when one isn't there and replace that also
-  return undefined;
 }

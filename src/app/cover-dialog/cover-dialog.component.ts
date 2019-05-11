@@ -11,7 +11,7 @@ import {Track} from '../track';
 export class CoverDialogComponent implements OnInit {
   constructor(
       public dialogRef: MatDialogRef<CoverDialogComponent>,
-      @Inject(MAT_DIALOG_DATA) public data: Track) {}
+      @Inject(MAT_DIALOG_DATA) public track: Track) {}
 
   ngOnInit() {}
 }

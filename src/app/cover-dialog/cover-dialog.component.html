@@ -1,3 +1,18 @@
-<p>
-  cover-dialog works!
-</p>
+<img [src]="track.coverLink" alt="" class="cover-art" />
+
+<mat-dialog-content>
+  <div class="title">
+    <h2><a [href]="track.trackLink">{{track.title}}</a></h2>
+    <p class="album"><a [href]="track.albumLink">{{track.album}}</a></p>
+  </div>
+
+  <div class="content mat-body-1">
+    <p>Artist: {{track.artist}}</p>
+
+    <p *ngFor="let credit of track.longArtist">
+      {{credit}}
+    </p>
+  </div>
+
+  <p class="command">&gt; <a [href]="track.getAbsolutePageLink()">{{track.pageTitle}}</a></p>
+</mat-dialog-content>
