@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import * as d3 from 'd3';
 import d3Tip from 'd3-tip';
 
 import rawData from '../../assets/data.json';
 import {ComicEvent, landmarks} from '../../data/act_information';
+import {CoverDialogComponent} from '../cover-dialog/cover-dialog.component'
 import {HeightTracker} from '../height_tracker';
 import {D3Item, Track} from '../track';
 
@@ -27,9 +29,11 @@ const PAGE_SPAN = LAST_PAGE - FIRST_PAGE;
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit {
+  constructor(private dialog: MatDialog) {}
+
   ngOnInit() {
     console.log(data);
-    d3stuff();
+    d3stuff(this.dialog);
   }
 }
 
@@ -39,7 +43,7 @@ const HS_LIME = '#4ac925';
 const HS_GREEN = '#168500';
 const HS_GRAY = '#C6C6C6';
 
-function d3stuff() {
+function d3stuff(dialog: MatDialog) {
   const chart = d3.select('#chart').attr('width', width).attr('height', HEIGHT);
 
   // ooo you should have a slick AF animation of it drawing the act line
@@ -126,7 +130,9 @@ function d3stuff() {
                              d.y - COVER_SIZE / 2})`)
                      .style('opacity', 0);
 
-  covers.on('mouseover', tip.show).on('mouseout', tip.hide);
+  covers.on('mouseover', tip.show).on('mouseout', tip.hide).on('click', (d) => {
+    dialog.open(CoverDialogComponent, {data: d});
+  });
 
   covers.transition()
       .duration(250)
