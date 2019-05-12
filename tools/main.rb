@@ -19,7 +19,10 @@ if File.exist? data_filename
   old_tracks = JSON.parse(File.read(data_filename, :encoding => 'utf-8'), :symbolize_names => true)
   old_tracks.each do |ot|
     matched_track = tracks.find { |t| t[:page] == ot[:page] }
-    matched_track[:page_title] = ot[:page_title] if matched_track
+    next unless matched_track
+    matched_track[:page_title] = ot[:page_title]
+    matched_track[:album_id] = ot[:album_id]
+    matched_track[:track_id] = ot[:track_id]
   end
 end
 
@@ -41,6 +44,8 @@ tracks.each do |t|
   problems.push "No page title\n" unless t[:page_title]
   problems.push "No page link\n" unless t[:page_link]
   problems.push "No artist\n" unless t[:artist]
+  problems.push "No album\n" unless t[:album]
+  problems.push "No album link\n" unless t[:album_link]
   problems.unshift "=======" unless problems.empty?
 
   if problems.length > 0
@@ -49,7 +54,7 @@ tracks.each do |t|
   end
 end
 
-File.open(__dir__ + '/../src/assets/data.json', 'w') do |f|
+File.open(data_filename, 'w') do |f|
   f.puts JSON.dump(tracks)
 end
 

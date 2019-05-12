@@ -1,18 +1,21 @@
-<img [src]="track.coverLink" alt="" class="cover-art" />
+<div class="above-player">
+  <img [src]="track.coverLink" alt="" class="cover-art" />
+  <mat-dialog-content>
+    <div class="title">
+      <h2 class="mat-headline"><a [href]="track.trackLink">{{track.title}}</a></h2>
+      <p class="album mat-subheading-1"><a [href]="track.albumLink">{{track.album}}</a></p>
+    </div>
 
-<mat-dialog-content>
-  <div class="title">
-    <h2><a [href]="track.trackLink">{{track.title}}</a></h2>
-    <p class="album"><a [href]="track.albumLink">{{track.album}}</a></p>
-  </div>
+    <div class="content mat-body-1">
+      <p>Artist: {{track.artist}}</p>
 
-  <div class="content mat-body-1">
-    <p>Artist: {{track.artist}}</p>
+      <p *ngFor="let credit of track.longArtist">
+        {{credit}}
+      </p>
+    </div>
 
-    <p *ngFor="let credit of track.longArtist">
-      {{credit}}
-    </p>
-  </div>
+    <p class="command">&gt; <a [href]="track.getAbsolutePageLink()">{{track.pageTitle}}</a></p>
+  </mat-dialog-content>
+</div>
 
-  <p class="command">&gt; <a [href]="track.getAbsolutePageLink()">{{track.pageTitle}}</a></p>
-</mat-dialog-content>
+<iframe style="border: 0; width: 100%; height: 120px;" [src]="iframeSrc" seamless><a [href]="track.albumLink">{{track.album}}</a></iframe>

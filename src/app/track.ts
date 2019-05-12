@@ -9,12 +9,14 @@ export interface D3Item {
 
 export class Track implements D3Item {
   page: number;
-  title: string;
-  trackLink?: string;
   pageTitle: string;
   pageLink: string;
+  title: string;
+  trackLink?: string;
+  trackId?: number;
   album: string;
   albumLink: string;
+  albumId?: number;
   artist?: string;
   artistLink?: string;
   longArtist: string[];
@@ -33,14 +35,16 @@ export class Track implements D3Item {
 
   constructor(trackJson: {
     page: number,
+    page_title: string,
     page_link: string,
     album: string,
     album_link: string,
+    album_id: number,
     artist?: string,
     artist_link?: string,
     title?: string,
     track_link?: string,
-    page_title?: string,
+    track_id?: number,
     long_artist?: string[],
   }) {
     this.page = trackJson.page;
@@ -49,9 +53,11 @@ export class Track implements D3Item {
     this.pageLink = trackJson.page_link;
     this.album = trackJson.album;
     this.albumLink = trackJson.album_link;
+    this.albumId = trackJson.album_id;
     this.artist = trackJson.artist;
     this.artistLink = trackJson.artist_link;
     this.pageTitle = trackJson.page_title;
+    this.trackId = trackJson.track_id;
     this.longArtist = trackJson.long_artist || [];
 
     this.coverLink = `assets/covers/${cover_filename(this.title)}`;

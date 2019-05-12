@@ -1,15 +1,19 @@
 
-:host {
+.above-player {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  width: 100%;
+  /* Max width of the Bandcamp embedded player. */
+  max-width: 700px;
 }
 
 .cover-art {
   flex: 0 .75 350px;
   width: 100%;
   max-width: 350px;
+  margin-bottom: 18px;
   /* Override flex item min-width: auto */
   min-width: 0;
   /* Override flex item alignment of stretch */
@@ -33,7 +37,7 @@ mat-dialog-content {
 }
 
 @media screen and (max-width: 719px) {
-  :host {
+  .above-player {
     flex-direction: column;
   }
 
