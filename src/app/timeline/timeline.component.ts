@@ -82,7 +82,7 @@ function d3stuff(dialog: MatDialog) {
   const fraction_of_comic = (page_count) =>
       page_count / landmarks.side1[landmarks.side1.length - 1].page;
 
-  const totalRollout = 4000;
+  const totalRollout = 2000;
 
   const side1Rollout =
       (landmarks.side1[landmarks.side1.length - 1].page - FIRST_PAGE) /
