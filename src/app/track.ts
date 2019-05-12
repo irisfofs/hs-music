@@ -21,7 +21,7 @@ export class Track implements D3Item {
   artistLink?: string;
   longArtist: string[];
 
-  coverLink: string;
+  coverLink?: string;
 
   heightLevel: number = 0;
 
@@ -60,7 +60,7 @@ export class Track implements D3Item {
     this.trackId = trackJson.track_id;
     this.longArtist = trackJson.long_artist || [];
 
-    this.coverLink = `assets/covers/${cover_filename(this.title)}`;
+    setCoverFilename(this);
   }
 
   getAbsolutePageLink() {
@@ -68,13 +68,12 @@ export class Track implements D3Item {
   }
 }
 
-function cover_filename(title: string) {
-  if (title) {
-    const fn = title.toLowerCase().replace(/ /g, '_').replace(/[^\w-]/g, '');
-    const final = `cover_${fn}.jpg`;
-    return final;
+function setCoverFilename(track: Track) {
+  if (track.title && track.trackLink) {
+    const fn =
+        track.title.toLowerCase().replace(/ /g, '_').replace(/[^\w-]/g, '');
+    track.coverLink = `assets/covers/cover_${fn}.jpg`;
+  } else {
+    track.coverLink = undefined;
   }
-  // TODO: return some generic cover page
-  // also learn when one isn't there and replace that also
-  return undefined;
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="220" height="233" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+<polygon points="4,64 45,43 45,12 82,12 82,23 106,12 106,7 208,59 108,59 108,64" style="fill:#4BE14E;" />
+<rect x="29" y="69" width="72" height="72" style="fill:#4BE14E;" />
+<polygon points="115,65 187,65 187,137 152,137 152,100 115,100" style="fill:#4BE14E;" />
+<rect x="109" y="107" width="36" height="36" style="fill:#4BE14E;" />
+<rect x="29" y="151" width="72" height="72" style="fill:#4BE14E;" />
+<rect x="111" y="151" width="72" height="72" style="fill:#4BE14E;" />
+</svg>

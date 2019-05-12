@@ -11,6 +11,9 @@ import {D3Item, Track} from '../track';
 
 const data: Track[] = rawData.map((raw) => new Track(raw));
 
+const SBURB_BETA = 'assets/Sburb_Logo.svg';
+const SBURB_ALPHA = 'assets/SburbAlpha_Logo.svg';
+
 // these should go somewhere better than just... sitting here ugh
 const width = window.innerWidth;
 const HEIGHT = window.innerHeight;
@@ -71,12 +74,14 @@ function d3stuff(dialog: MatDialog) {
     d.x = pageNumToX(d.page, landmarks.side1);
     d.baseY = HEIGHT / 4;
     d.y = d.baseY + (COVER_SIZE + SPACING) * tracker1.addTrack(d);
+    d.coverLink = d.coverLink || SBURB_BETA;
   });
 
   side2Covers.forEach((d: Track&D3Item) => {
     d.x = pageNumToX(d.page, landmarks.side2);
     d.baseY = 3 * HEIGHT / 4;
     d.y = d.baseY + (COVER_SIZE + SPACING) * tracker2.addTrack(d);
+    d.coverLink = d.coverLink || SBURB_ALPHA;
   });
 
   const fraction_of_comic = (page_count) =>

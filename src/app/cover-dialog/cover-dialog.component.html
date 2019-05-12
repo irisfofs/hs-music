@@ -18,4 +18,4 @@
   </mat-dialog-content>
 </div>
 
-<iframe style="border: 0; width: 100%; height: 120px;" [src]="iframeSrc" seamless><a [href]="track.albumLink">{{track.album}}</a></iframe>
+<iframe *ngIf="track.albumId" style="border: 0; width: 100%; height: 120px;" [src]="iframeSrc" seamless><a [href]="track.albumLink">{{track.album}}</a></iframe>
