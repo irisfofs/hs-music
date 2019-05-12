@@ -38,7 +38,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "clang-format": "^1.2.4",
-    "closure-library.d.ts": "git+https://github.com/teppeis/closure-library.d.ts.git",
     "codelyzer": "~4.5.0",
     "husky": "^2.2.0",
     "jasmine-core": "~2.99.1",
