@@ -10,7 +10,7 @@
 }
 
 .cover-art {
-  flex: 0 .75 350px;
+  flex: 0 .75 50%;
   width: 100%;
   max-width: 350px;
   margin-bottom: 18px;
